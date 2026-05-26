@@ -1,0 +1,112 @@
+{
+  "entities": [
+    {
+      "entity_type": "company",
+      "legal_entity_name": "EKLAVYA LIFELONG LEARNINGS PRIVATE LIMITED",
+      "entity_tagline": "Learning Never Ends! Never Goes in Vain.",
+      "anchor_website": "1lavya.com",
+      "domain_status": "Acquired",
+      "acronym": null,
+      "abbreviation": "ELLPL",
+      "brand": {
+        "brand_name": "1LAVYA",
+        "tagline": "Practice Perfects a Person"
+      },
+      "target_audience": {
+        "primary_audience": "Natural Person",
+        "audience_maturity": "Age 14-24",
+        "obsessed_people": [
+          "Students who want to continuously learn",
+          "Students who believe learning never stops"
+        ]
+      },
+      "brand_strategy": {
+        "purpose": "To build a culture of lifelong learning among students.",
+        "transformation_promise": "Students become consistent learners who continuously improve through practice and repetition.",
+        "perception": "A learning-first platform that believes practice and consistency shape a person's future.",
+        "exclusive_positioning": "The only choice for students who believe mastery comes through disciplined practice and continuous learning."
+      }
+    },
+    {
+      "entity_type": "individual_brand",
+      "legal_entity_name": "INDIVIDUAL",
+      "entity_tagline": null,
+      "anchor_website": "capranavpt.com",
+      "domain_status": "Acquired",
+      "acronym": "CAP",
+      "abbreviation": "Individual",
+      "brand": {
+        "brand_name": "Pranav Sir",
+        "tagline": "An Unconventional CA!"
+      },
+      "target_audience": {
+        "primary_audience": "CA Students",
+        "audience_maturity": "Age 18-28",
+        "obsessed_people": [
+          "Students obsessed with learning",
+          "Students who learn from everything",
+          "Students who value conceptual understanding over rote learning"
+        ]
+      },
+      "brand_strategy": {
+        "purpose": [
+          "To teach students how to study",
+          "To make students fall in love with studying",
+          "To create lifelong learners who continuously evolve in the AI era"
+        ],
+        "transformation_promise": [
+          "Deep conceptual clarity",
+          "A genuine love for learning and studying"
+        ],
+        "perception": "A teacher who makes students excited and emotionally connected to the process of studying.",
+        "exclusive_positioning": [
+          "The only choice for students who want conceptual depth instead of surface-level learning",
+          "Best suited for students who strongly believe in self-learning"
+        ]
+      }
+    },
+    {
+      "entity_type": "individual_brand",
+      "legal_entity_name": "INDIVIDUAL",
+      "entity_tagline": null,
+      "anchor_website": "pranavpt.com",
+      "domain_status": "Acquired",
+      "acronym": "PUP",
+      "abbreviation": "Individual",
+      "brand": {
+        "brand_name": "Pranav PT",
+        "tagline": "Bringing Technology Closer to Humans!"
+      },
+      "target_audience": {
+        "primary_audience": [
+          "Individuals",
+          "Professionals",
+          "Businesses"
+        ],
+        "audience_maturity": "Age 11-80",
+        "obsessed_people": [
+          "People who want to understand how technology works internally",
+          "People who enjoy customizing and experimenting with technology",
+          "Tech lovers interested in App Development, Automation, and AI"
+        ]
+      },
+      "brand_strategy": {
+        "purpose": [
+          "To simplify technology so even an 11-year-old can understand it",
+          "To make technology approachable and user-friendly",
+          "To help people understand not just how to use technology, but how it works internally"
+        ],
+        "core_analogy": {
+          "theme": "Car Analogy",
+          "description": "Just like car enthusiasts learn engines, gears, pistons, and customization, technology learners should understand code, frontend, operating systems, versioning, servers, automation, and AI."
+        },
+        "transformation_promise": [
+          "People gain clarity about the building blocks of technology",
+          "People become capable of customizing and eventually building their own tech solutions"
+        ],
+        "perception": "Someone who makes App Development, Automation, and AI concepts so simple that even an 11-year-old can understand them.",
+        "exclusive_positioning": "The only choice for tech lovers who want to deeply understand and build technology instead of merely using it."
+      }
+    }
+  ]
+}
