@@ -1,0 +1,119 @@
+{
+  "page": {
+    "route":       "/explore",
+    "slug":        "explore",
+    "title":       "Explore Technology — Pranav PT",
+    "description": "Understand the building blocks of modern technology — AI, Apps, Automation, and Servers — explained through real-world analogies."
+  },
+
+  "sections": [
+
+    {
+      "id":      "hero",
+      "type":    "page_hero",
+      "enabled": true,
+
+      "badge":       "Start Here",
+      "headline":    "Technology has layers. Let's open them up.",
+      "subheadline": "Every modern system — from Instagram to ChatGPT — is built from the same core building blocks. Here's where you learn them.",
+      "background":  "gradient_hero"
+    },
+
+    {
+      "id":      "pillars",
+      "type":    "card_grid",
+      "enabled": true,
+
+      "title":    "The Four Pillars of Modern Technology",
+      "subtitle": "Pick any pillar. Each one is self-contained and starts from zero.",
+      "columns":  { "desktop": 2, "tablet": 2, "mobile": 1 },
+
+      "cards": [
+        {
+          "title":       "Artificial Intelligence",
+          "description": "What is AI really? How does it learn? Why does ChatGPT sometimes get things wrong? All of this — explained without buzzwords.",
+          "icon":        "cpu-chip",
+          "href":        "/ai",
+          "tag":         "Most Popular"
+        },
+        {
+          "title":       "App Development",
+          "description": "What happens when you tap an app? What is frontend, backend, and database — and how do they talk to each other?",
+          "icon":        "device-phone-mobile",
+          "href":        "/apps",
+          "tag":         null
+        },
+        {
+          "title":       "Automation",
+          "description": "How do systems do work without a human clicking buttons? From scheduled tasks to AI-triggered workflows.",
+          "icon":        "arrow-path",
+          "href":        "/automation",
+          "tag":         null
+        },
+        {
+          "title":       "Servers & Infrastructure",
+          "description": "Where do websites live? What is a server, a cloud, a CDN? Why does your site sometimes go down?",
+          "icon":        "server-stack",
+          "href":        "/explore#servers",
+          "tag":         null
+        }
+      ]
+    },
+
+    {
+      "id":      "learning_paths",
+      "type":    "path_selector",
+      "enabled": true,
+
+      "title":   "Choose Your Path",
+      "subtitle":"Start from zero or jump to what interests you.",
+
+      "paths": [
+        {
+          "level":       "Beginner",
+          "color":       "primary.200",
+          "description": "No background needed. Start from the very basics.",
+          "steps": [
+            { "title": "What is technology?",          "href": "/explore#what-is-tech" },
+            { "title": "How does the internet work?",  "href": "/explore#internet" },
+            { "title": "What is an app?",              "href": "/apps" },
+            { "title": "What is AI — really?",         "href": "/ai" }
+          ]
+        },
+        {
+          "level":       "Intermediate",
+          "color":       "primary.400",
+          "description": "You use tech daily. Now understand how it works.",
+          "steps": [
+            { "title": "Frontend vs Backend explained",  "href": "/apps#frontend-backend" },
+            { "title": "What is an API?",                "href": "/apps#apis" },
+            { "title": "How AI models are trained",      "href": "/ai#training" },
+            { "title": "What is automation really?",     "href": "/automation" }
+          ]
+        },
+        {
+          "level":       "Advanced",
+          "color":       "primary.600",
+          "description": "You want to build. Let's go deeper.",
+          "steps": [
+            { "title": "Building your first app",       "href": "/apps#build" },
+            { "title": "Setting up automation workflows","href": "/automation#workflows" },
+            { "title": "Deploying to a server",         "href": "/explore#deploy" },
+            { "title": "Integrating AI into your app",  "href": "/ai#integrate" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id":      "cta_banner",
+      "type":    "cta_banner",
+      "enabled": true,
+
+      "title":    "Don't know where to start?",
+      "subtitle": "Start with AI. It's the most relevant, the most misunderstood, and the most exciting.",
+      "cta_primary": { "text": "Understand AI First", "href": "/ai" }
+    }
+
+  ]
+}

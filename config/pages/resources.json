@@ -1,0 +1,119 @@
+{
+  "page": {
+    "route":       "/resources",
+    "slug":        "resources",
+    "title":       "Resources — Pranav PT",
+    "description": "Curated learning paths, tools, and references for understanding AI, App Development, Automation, and Technology."
+  },
+
+  "sections": [
+
+    {
+      "id":      "hero",
+      "type":    "page_hero",
+      "enabled": true,
+
+      "badge":       "Resources",
+      "headline":    "Everything you need to go from curious to capable.",
+      "subheadline": "Curated paths, tools, and references. No noise — just what actually matters.",
+      "background":  "gradient_hero"
+    },
+
+    {
+      "id":      "learning_paths",
+      "type":    "card_grid",
+      "enabled": true,
+
+      "title":    "Learning Paths",
+      "subtitle": "Start anywhere. Every path is self-contained.",
+      "columns":  { "desktop": 2, "tablet": 2, "mobile": 1 },
+
+      "cards": [
+        {
+          "title":       "Understand AI from Scratch",
+          "description": "What is AI, how it learns, and how to think about it. No math required.",
+          "icon":        "cpu-chip",
+          "href":        "/ai",
+          "tag":         "Beginner"
+        },
+        {
+          "title":       "How Apps are Built",
+          "description": "Frontend, backend, APIs, databases — the complete mental model of app architecture.",
+          "icon":        "device-phone-mobile",
+          "href":        "/apps",
+          "tag":         "Beginner"
+        },
+        {
+          "title":       "Automation Fundamentals",
+          "description": "Triggers, actions, schedules — how to make systems work without you.",
+          "icon":        "arrow-path",
+          "href":        "/automation",
+          "tag":         "Intermediate"
+        },
+        {
+          "title":       "Explore All Technology Concepts",
+          "description": "A broad starting point covering servers, internet, APIs, and more.",
+          "icon":        "globe-alt",
+          "href":        "/explore",
+          "tag":         "All Levels"
+        }
+      ]
+    },
+
+    {
+      "id":      "tools_reference",
+      "type":    "grouped_list",
+      "enabled": true,
+
+      "title":   "Tools Worth Knowing",
+
+      "groups": [
+        {
+          "category": "AI Tools",
+          "items": [
+            { "name": "ChatGPT",   "use": "General AI assistant — ask anything" },
+            { "name": "Claude",    "use": "Long-form reasoning and analysis" },
+            { "name": "Perplexity","use": "AI-powered search with cited sources" }
+          ]
+        },
+        {
+          "category": "App Development",
+          "items": [
+            { "name": "Next.js",  "use": "React framework for fast, modern web apps" },
+            { "name": "Vercel",   "use": "Deploy apps instantly with zero configuration" },
+            { "name": "Supabase", "use": "Open-source backend — database, auth, storage" }
+          ]
+        },
+        {
+          "category": "Automation",
+          "items": [
+            { "name": "Zapier", "use": "Connect apps without code" },
+            { "name": "Make",   "use": "Visual automation for complex workflows" },
+            { "name": "n8n",    "use": "Self-hosted, open-source automation platform" }
+          ]
+        },
+        {
+          "category": "Learning",
+          "items": [
+            { "name": "MDN Web Docs",   "use": "The reference for HTML, CSS, JavaScript" },
+            { "name": "The Odin Project","use": "Free, structured web development curriculum" },
+            { "name": "fast.ai",        "use": "Practical deep learning for coders" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id":      "newsletter",
+      "type":    "newsletter_signup",
+      "enabled": true,
+
+      "title":       "Get concepts explained weekly.",
+      "subtitle":    "One technology concept. One real-world analogy. Every week.",
+      "placeholder": "Enter your email",
+      "cta":         "Subscribe — It's Free",
+      "note":        "No spam. Unsubscribe anytime."
+    }
+
+  ]
+}

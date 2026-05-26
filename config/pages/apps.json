@@ -1,0 +1,143 @@
+{
+  "page": {
+    "route":       "/apps",
+    "slug":        "apps",
+    "title":       "Build Apps — Pranav PT",
+    "description": "How do apps actually work internally? Understand frontend, backend, databases, and APIs — explained simply so you can eventually build your own."
+  },
+
+  "sections": [
+
+    {
+      "id":      "hero",
+      "type":    "page_hero",
+      "enabled": true,
+
+      "badge":       "App Development",
+      "headline":    "Every app is just layers talking to each other.",
+      "subheadline": "Once you understand the three layers — frontend, backend, and database — every app in the world makes sense.",
+      "background":  "gradient_hero",
+
+      "cta_primary": { "text": "See the Layers", "href": "#layers" }
+    },
+
+    {
+      "id":      "layers",
+      "type":    "layered_diagram",
+      "enabled": true,
+      "anchor":  "layers",
+
+      "title":   "The Three Layers of Every App",
+      "subtitle":"Think of it like a restaurant.",
+
+      "layers": [
+        {
+          "name":        "Frontend",
+          "analogy":     "The dining room — what the customer sees and touches.",
+          "description": "Everything you see on screen: buttons, layouts, text, forms. Built with HTML, CSS, JavaScript.",
+          "icon":        "computer-desktop",
+          "color":       "primary.200"
+        },
+        {
+          "name":        "Backend",
+          "analogy":     "The kitchen — where the real work happens.",
+          "description": "Processes your requests, applies business logic, communicates with the database. Built with Node, Python, etc.",
+          "icon":        "cog-8-tooth",
+          "color":       "primary.400"
+        },
+        {
+          "name":        "Database",
+          "analogy":     "The pantry — where everything is stored.",
+          "description": "Stores all user data, content, records. Accessed only by the backend, never directly by the frontend.",
+          "icon":        "circle-stack",
+          "color":       "primary.600"
+        }
+      ]
+    },
+
+    {
+      "id":      "what_is_api",
+      "type":    "explainer_block",
+      "enabled": true,
+      "anchor":  "apis",
+
+      "title":   "What is an API?",
+      "body":    "An API is a waiter. The frontend (dining room) tells the waiter what it needs. The waiter goes to the kitchen (backend), gets what's required, and brings it back. The frontend never talks directly to the kitchen. That's the API — a defined contract for how layers communicate.",
+
+      "visual": {
+        "type":        "illustration",
+        "description": "Restaurant analogy: customer → waiter (API) → kitchen → waiter → customer"
+      }
+    },
+
+    {
+      "id":      "concepts",
+      "type":    "card_grid",
+      "enabled": true,
+
+      "title":    "Key Concepts in App Development",
+      "columns":  { "desktop": 3, "tablet": 2, "mobile": 1 },
+
+      "cards": [
+        {
+          "title":       "API",
+          "description": "The contract that lets different parts of a system communicate.",
+          "icon":        "arrows-right-left"
+        },
+        {
+          "title":       "Authentication",
+          "description": "How an app knows who you are. Sessions, tokens, and OAuth explained simply.",
+          "icon":        "lock-closed"
+        },
+        {
+          "title":       "Database",
+          "description": "Where data lives. SQL vs NoSQL — what's the real difference?",
+          "icon":        "circle-stack"
+        },
+        {
+          "title":       "Deployment",
+          "description": "How your app goes from your laptop to the internet.",
+          "icon":        "cloud-arrow-up"
+        },
+        {
+          "title":       "Version Control",
+          "description": "How developers track changes and collaborate without losing work.",
+          "icon":        "code-bracket"
+        },
+        {
+          "title":       "Frameworks",
+          "description": "Pre-built structures that speed up building — Next.js, Django, Rails.",
+          "icon":        "puzzle-piece"
+        }
+      ]
+    },
+
+    {
+      "id":      "build_path",
+      "type":    "step_list",
+      "enabled": true,
+      "anchor":  "build",
+
+      "title":   "Your Path to Building an App",
+      "steps": [
+        { "step": 1, "title": "Understand how apps work",        "description": "Start with the mental model — layers, APIs, data." },
+        { "step": 2, "title": "Learn HTML, CSS, JavaScript",     "description": "The only three tools every frontend developer uses." },
+        { "step": 3, "title": "Pick a framework",               "description": "Next.js for web. React Native for mobile. Start with one." },
+        { "step": 4, "title": "Connect a backend",              "description": "Learn how your frontend talks to a server or serverless function." },
+        { "step": 5, "title": "Add a database",                 "description": "Understand how to store and retrieve data." },
+        { "step": 6, "title": "Deploy it",                      "description": "Put it on the internet. Vercel or Railway make this simple." }
+      ]
+    },
+
+    {
+      "id":      "cta_banner",
+      "type":    "cta_banner",
+      "enabled": true,
+
+      "title":    "Ready to automate your app or add AI to it?",
+      "cta_primary":   { "text": "Learn Automation", "href": "/automation" },
+      "cta_secondary": { "text": "Explore AI",        "href": "/ai" }
+    }
+
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "page": {
+    "route":       "/automation",
+    "slug":        "automation",
+    "title":       "Automation — Pranav PT",
+    "description": "What is automation really? Learn how systems do work without human input — from scheduled tasks to AI-powered workflows."
+  },
+
+  "sections": [
+
+    {
+      "id":      "hero",
+      "type":    "page_hero",
+      "enabled": true,
+
+      "badge":       "Automation",
+      "headline":    "Automation is just a system doing what you'd do — without you.",
+      "subheadline": "It's not robots. It's not magic. It's logic that runs on a schedule or a trigger. And once you get it, you'll want to automate everything.",
+      "background":  "gradient_hero",
+
+      "cta_primary": { "text": "What is Automation?", "href": "#what-is-automation" }
+    },
+
+    {
+      "id":      "what_is_automation",
+      "type":    "explainer_block",
+      "enabled": true,
+      "anchor":  "what-is-automation",
+
+      "title":   "What is automation — in plain language?",
+      "body":    "Automation is setting up instructions in advance so that a computer can do them without you being there. Think of it like a vending machine. You don't need a human to hand you a snack — the machine knows: if button A4 is pressed, dispense this item, take this payment. Automation is exactly that. Triggers and actions. If this happens, do that.",
+
+      "visual": {
+        "type":        "illustration",
+        "description": "Trigger → condition → action flow diagram, clean and simple"
+      }
+    },
+
+    {
+      "id":      "types",
+      "type":    "card_grid",
+      "enabled": true,
+
+      "title":    "Types of Automation",
+      "columns":  { "desktop": 3, "tablet": 2, "mobile": 1 },
+
+      "cards": [
+        {
+          "title":       "Scheduled Automation",
+          "description": "Run something at a fixed time. Every day at 9am, send a report. Every Monday, back up the database.",
+          "icon":        "clock",
+          "example":     "Cron jobs, scheduled emails"
+        },
+        {
+          "title":       "Trigger-Based Automation",
+          "description": "When something happens, do something else. A form is submitted → send a welcome email → add to CRM.",
+          "icon":        "bolt",
+          "example":     "Zapier, Make, webhooks"
+        },
+        {
+          "title":       "AI-Powered Automation",
+          "description": "Automation that uses AI to make decisions. Summarize this email. Classify this support ticket. Reply if it matches X.",
+          "icon":        "cpu-chip",
+          "example":     "LLM pipelines, AI agents"
+        },
+        {
+          "title":       "UI Automation",
+          "description": "Controlling a browser or desktop app programmatically. Useful when no API exists.",
+          "icon":        "cursor-arrow-rays",
+          "example":     "Playwright, Selenium"
+        },
+        {
+          "title":       "Data Pipeline Automation",
+          "description": "Moving, cleaning, and transforming data between systems automatically.",
+          "icon":        "arrow-path",
+          "example":     "ETL workflows, Airflow"
+        },
+        {
+          "title":       "Notification Automation",
+          "description": "Sending alerts or updates automatically when a condition is met.",
+          "icon":        "bell-alert",
+          "example":     "Slack alerts, email digests"
+        }
+      ]
+    },
+
+    {
+      "id":      "tools",
+      "type":    "table_list",
+      "enabled": true,
+
+      "title":   "Tools to Know",
+      "items": [
+        { "tool": "Zapier",    "type": "No-code",   "good_for": "Connecting apps without writing code" },
+        { "tool": "Make",      "type": "No-code",   "good_for": "Visual automation with more complexity than Zapier" },
+        { "tool": "n8n",       "type": "Low-code",  "good_for": "Self-hosted, developer-friendly automation" },
+        { "tool": "Cron",      "type": "Technical", "good_for": "Scheduling scripts on a server" },
+        { "tool": "Playwright","type": "Technical", "good_for": "Browser automation and testing" },
+        { "tool": "LangChain", "type": "AI",        "good_for": "Building AI-powered automation pipelines" }
+      ]
+    },
+
+    {
+      "id":      "cta_banner",
+      "type":    "cta_banner",
+      "enabled": true,
+
+      "title":    "Want to see automation working inside an app?",
+      "cta_primary":   { "text": "Explore App Development", "href": "/apps" },
+      "cta_secondary": { "text": "See AI Workflows",         "href": "/ai" }
+    }
+
+  ]
+}

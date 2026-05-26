@@ -1,0 +1,80 @@
+{
+  "accessibility": {
+    "minimum_contrast_ratio": "4.5:1",
+    "focus_ring_color":       "#2F7EBF",
+    "focus_ring_width":       "2px",
+    "minimum_touch_target":   "44px",
+    "font_scaling_supported": true,
+    "aria_labels_required":   true,
+    "keyboard_navigable":     true
+  },
+
+  "performance": {
+    "max_homepage_size_mb":    2,
+    "preferred_image_format":  "webp",
+    "lazy_loading":            true,
+    "critical_font_preload":   true,
+    "mobile_first":            true,
+    "core_web_vitals_target": {
+      "LCP": "under 2.5s",
+      "FID": "under 100ms",
+      "CLS": "under 0.1"
+    }
+  },
+
+  "seo": {
+    "default_title":       "Pranav PT — Bringing Technology Closer to Humans",
+    "default_description": "Understand AI, App Development, Automation & Technology in the simplest way possible.",
+    "keywords": [
+      "AI Simplified",
+      "Learn Technology",
+      "Automation for Beginners",
+      "App Development",
+      "Human Friendly Technology",
+      "Technology Education"
+    ],
+    "og_image_required":   true,
+    "canonical_urls":      true,
+    "structured_data":     true
+  },
+
+  "microcopy": {
+    "cta_examples": [
+      "Explore Technology",
+      "Understand AI",
+      "Start Learning",
+      "Decode Systems",
+      "Build Your First App",
+      "See How It Works"
+    ],
+    "input_placeholders": {
+      "search": "Search technology concepts...",
+      "email":  "Enter your email",
+      "query":  "What would you like to understand?"
+    },
+    "empty_states": {
+      "no_results": "Nothing here yet — try a different search.",
+      "loading":    "Loading..."
+    }
+  },
+
+  "developer_rules": [
+    "Never hardcode colors inside components — always reference design tokens",
+    "Never hardcode spacing values — always use spacing scale",
+    "Use token-based design everywhere",
+    "All content must be sourced from /config JSON files",
+    "Keep typography fully configurable via design-tokens.json",
+    "Components must be reusable and driven by props",
+    "Pages must be statically generated where possible (Next.js SSG)"
+  ],
+
+  "file_structure": {
+    "config_tokens":    "/config/design-tokens.json",
+    "config_layout":    "/config/layout.json",
+    "config_components":"/config/components.json",
+    "config_animation": "/config/animation.json",
+    "config_meta":      "/config/meta.json",
+    "config_rules":     "/config/rules.json",
+    "pages_dir":        "/config/pages/"
+  }
+}

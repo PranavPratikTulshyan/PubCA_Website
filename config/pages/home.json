@@ -1,0 +1,177 @@
+{
+  "page": {
+    "route":       "/",
+    "slug":        "home",
+    "title":       "Pranav PT — Bringing Technology Closer to Humans",
+    "description": "Understand AI, App Development, Automation & Technology in the simplest way possible — through real-world analogies and human-first explanations."
+  },
+
+  "sections": [
+
+    {
+      "id":      "hero",
+      "type":    "hero",
+      "enabled": true,
+
+      "badge":       "Technology Made Human",
+      "headline": {
+        "line_1": "Technology was never difficult.",
+        "line_2": "It was just badly explained."
+      },
+      "subheadline": "Understand AI, Apps & Automation in the simplest way possible — through real-world analogies and human-first explanations.",
+
+      "cta_primary":   { "text": "Explore Technology", "href": "/explore" },
+      "cta_secondary": { "text": "Start Learning",     "href": "/resources" },
+
+      "background": "gradient_hero",
+      "alignment":  "left",
+      "visual": {
+        "type":        "illustration",
+        "description": "Layered modular technology diagram — think exploded car engine but for software layers"
+      }
+    },
+
+    {
+      "id":       "topics",
+      "type":     "card_grid",
+      "enabled":  true,
+
+      "title":    "Explore How Technology Works",
+      "subtitle": "Understand the engine behind modern technology.",
+      "columns":  { "desktop": 4, "tablet": 2, "mobile": 1 },
+
+      "cards": [
+        {
+          "title":       "AI",
+          "description": "Understand what actually happens behind AI tools.",
+          "icon":        "cpu-chip",
+          "href":        "/ai"
+        },
+        {
+          "title":       "Apps",
+          "description": "Learn how apps are structured and built internally.",
+          "icon":        "device-phone-mobile",
+          "href":        "/apps"
+        },
+        {
+          "title":       "Automation",
+          "description": "See how systems automate repetitive work.",
+          "icon":        "arrow-path",
+          "href":        "/automation"
+        },
+        {
+          "title":       "Servers",
+          "description": "Explore where your applications actually run.",
+          "icon":        "server-stack",
+          "href":        "/explore"
+        }
+      ]
+    },
+
+    {
+      "id":      "car_analogy",
+      "type":    "split_content",
+      "enabled": true,
+
+      "badge":    "The Core Idea",
+      "title":    "Technology is like a car.",
+      "subtitle": "You don't need to be a mechanic to drive. But if you understand the engine, gears, and fuel system — you can fix problems, customize, and eventually build your own.",
+      "body":     "Most people only learn to drive. Pranav PT teaches you the engine. AI, apps, automation, and servers — all explained through real analogies so you actually understand what's happening, not just how to click buttons.",
+
+      "cta": { "text": "See How It Works", "href": "/explore" },
+
+      "layout":    "text_left_visual_right",
+      "visual": {
+        "type":        "illustration",
+        "description": "Split diagram: car parts on left mapped to tech concepts on right (engine → server, gears → API, dashboard → frontend)"
+      }
+    },
+
+    {
+      "id":      "why_pranav_pt",
+      "type":    "feature_list",
+      "enabled": true,
+
+      "title":   "Why Pranav PT?",
+      "subtitle":"There are thousands of tech tutorials. This is different.",
+
+      "features": [
+        {
+          "icon":        "light-bulb",
+          "title":       "Concepts, not commands",
+          "description": "You learn WHY something works, not just which button to click."
+        },
+        {
+          "icon":        "user-group",
+          "title":       "Built for age 11 to 80",
+          "description": "Designed so anyone — student, professional, or curious adult — can follow along."
+        },
+        {
+          "icon":        "puzzle-piece",
+          "title":       "Real-world analogies",
+          "description": "Every concept is mapped to something you already understand in real life."
+        },
+        {
+          "icon":        "academic-cap",
+          "title":       "From curious to capable",
+          "description": "You go from understanding technology to being able to customize and build it."
+        }
+      ]
+    },
+
+    {
+      "id":      "topics_depth",
+      "type":    "horizontal_scroll_cards",
+      "enabled": true,
+
+      "title":   "Pick Where You Want to Start",
+      "subtitle":"Every path starts simple. Every path goes deep.",
+
+      "cards": [
+        {
+          "label":       "Beginner",
+          "title":       "What even is AI?",
+          "topic":       "AI",
+          "read_time":   "5 min",
+          "href":        "/ai"
+        },
+        {
+          "label":       "Beginner",
+          "title":       "How does an app work internally?",
+          "topic":       "Apps",
+          "read_time":   "6 min",
+          "href":        "/apps"
+        },
+        {
+          "label":       "Intermediate",
+          "title":       "What is automation and why does it matter?",
+          "topic":       "Automation",
+          "read_time":   "7 min",
+          "href":        "/automation"
+        },
+        {
+          "label":       "Intermediate",
+          "title":       "Where do websites actually live?",
+          "topic":       "Servers",
+          "read_time":   "5 min",
+          "href":        "/explore"
+        }
+      ]
+    },
+
+    {
+      "id":      "cta_banner",
+      "type":    "cta_banner",
+      "enabled": true,
+
+      "title":    "Ready to understand technology — not just use it?",
+      "subtitle": "Start with one concept. One analogy. One idea that makes everything click.",
+
+      "cta_primary":   { "text": "Start Exploring", "href": "/explore" },
+      "cta_secondary": { "text": "Browse Resources", "href": "/resources" },
+
+      "background": "gradient_hero"
+    }
+
+  ]
+}

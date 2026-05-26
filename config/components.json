@@ -1,0 +1,154 @@
+{
+  "navbar": {
+    "height":     "80px",
+    "background": "rgba(255,255,255,0.85)",
+    "backdrop_blur": "12px",
+    "sticky":     true,
+    "border_bottom": "1px solid #DCE3EA",
+
+    "logo": {
+      "text":        "Pranav PT",
+      "font_family": "Manrope",
+      "font_size":   "xl",
+      "font_weight": "bold",
+      "color":       "#1A1A1A"
+    },
+
+    "menu_items": [
+      { "label": "Home",               "href": "/" },
+      { "label": "Explore Technology", "href": "/explore" },
+      { "label": "AI Simplified",      "href": "/ai" },
+      { "label": "Build Apps",         "href": "/apps" },
+      { "label": "Automation",         "href": "/automation" },
+      { "label": "Resources",          "href": "/resources" },
+      { "label": "About",              "href": "/about" }
+    ],
+
+    "menu_item_style": {
+      "font_size":   "sm",
+      "font_weight": "medium",
+      "color":       "#4B5563",
+      "hover_color": "#2F7EBF",
+      "transition":  "normal"
+    },
+
+    "mobile_menu": {
+      "type": "slide_drawer",
+      "background": "#FFFFFF"
+    }
+  },
+
+  "footer": {
+    "background":   "#F9FBFC",
+    "border_top":   "1px solid #DCE3EA",
+    "padding":      "48px 0 32px 0",
+
+    "brand": {
+      "text":        "Pranav PT",
+      "tagline":     "Bringing Technology Closer to Humans!",
+      "font_family": "Manrope",
+      "font_weight": "bold"
+    },
+
+    "links": [
+      { "label": "Privacy Policy", "href": "/privacy" },
+      { "label": "Terms of Use",   "href": "/terms" }
+    ],
+
+    "social": [
+      { "platform": "LinkedIn",  "icon": "linkedin",  "href": "#" },
+      { "platform": "YouTube",   "icon": "youtube",   "href": "#" },
+      { "platform": "Instagram", "icon": "instagram", "href": "#" }
+    ],
+
+    "copyright": "© 2026 Pranav PT. All rights reserved.",
+
+    "layout": "three_column",
+    "columns": ["brand_tagline", "nav_links", "social_icons"]
+  },
+
+  "buttons": {
+    "primary": {
+      "background":       "#2F7EBF",
+      "text_color":       "#FFFFFF",
+      "border_radius":    "16px",
+      "padding":          "14px 28px",
+      "font_weight":      600,
+      "font_size":        "base",
+      "hover_background": "#2569A2",
+      "shadow":           "md",
+      "transition":       "normal"
+    },
+    "secondary": {
+      "background":       "#FFFFFF",
+      "text_color":       "#2F7EBF",
+      "border":           "1px solid #DCE3EA",
+      "border_radius":    "16px",
+      "padding":          "14px 28px",
+      "font_weight":      600,
+      "font_size":        "base",
+      "hover_background": "#F4F8FB",
+      "transition":       "normal"
+    },
+    "ghost": {
+      "background":       "transparent",
+      "text_color":       "#1A1A1A",
+      "hover_background": "#F3F5F7",
+      "border_radius":    "10px",
+      "padding":          "10px 16px",
+      "transition":       "fast"
+    }
+  },
+
+  "cards": {
+    "default": {
+      "background":    "#FFFFFF",
+      "border_radius": "24px",
+      "padding":       "32px",
+      "border":        "1px solid #DCE3EA",
+      "shadow":        "md",
+      "hover_shadow":  "lg",
+      "transition":    "normal"
+    },
+    "interactive": {
+      "hover_translate_y": "-4px",
+      "hover_scale":       1.01,
+      "cursor":            "pointer"
+    },
+    "compact": {
+      "background":    "#FFFFFF",
+      "border_radius": "16px",
+      "padding":       "20px 24px",
+      "border":        "1px solid #DCE3EA",
+      "shadow":        "sm",
+      "hover_shadow":  "md"
+    }
+  },
+
+  "badge": {
+    "background":    "#DDEAF5",
+    "text_color":    "#2569A2",
+    "border_radius": "9999px",
+    "padding":       "6px 14px",
+    "font_size":     "sm",
+    "font_weight":   600
+  },
+
+  "section_header": {
+    "title_font_size":    { "desktop": "4xl", "mobile": "3xl" },
+    "title_font_weight":  "extrabold",
+    "title_color":        "#1A1A1A",
+    "subtitle_font_size": { "desktop": "lg", "mobile": "base" },
+    "subtitle_color":     "#4B5563",
+    "max_width":          "640px",
+    "alignment":          "center",
+    "gap_below_title":    "16px",
+    "gap_below_subtitle": "48px"
+  },
+
+  "divider": {
+    "color":  "#DCE3EA",
+    "height": "1px",
+    "margin": "0"
+  }
+}

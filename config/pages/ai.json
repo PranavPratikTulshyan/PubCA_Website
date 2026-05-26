@@ -1,0 +1,120 @@
+{
+  "page": {
+    "route":       "/ai",
+    "slug":        "ai",
+    "title":       "AI Simplified — Pranav PT",
+    "description": "What is AI really? Understand machine learning, large language models, and AI tools — explained simply through real-world analogies."
+  },
+
+  "sections": [
+
+    {
+      "id":      "hero",
+      "type":    "page_hero",
+      "enabled": true,
+
+      "badge":       "AI Simplified",
+      "headline":    "AI is not magic. It's math that learned from examples.",
+      "subheadline": "Once you understand the core idea, every AI tool — ChatGPT, image generators, recommendation systems — suddenly makes sense.",
+      "background":  "gradient_hero",
+
+      "cta_primary": { "text": "Start from Zero", "href": "#what-is-ai" }
+    },
+
+    {
+      "id":      "what_is_ai",
+      "type":    "explainer_block",
+      "enabled": true,
+      "anchor":  "what-is-ai",
+
+      "title":   "What is AI — in one analogy?",
+      "body":    "Imagine you want to teach a child to recognize a dog. You don't give them a rulebook. You show them 10,000 photos — dog, not dog, dog, not dog. Eventually they just know. AI works the same way. Show it enough examples, and it learns the pattern. That's it. That's the core idea behind all of it.",
+
+      "visual": {
+        "type":        "illustration",
+        "description": "Simple diagram: pile of examples → pattern recognition → output"
+      }
+    },
+
+    {
+      "id":      "concepts",
+      "type":    "card_grid",
+      "enabled": true,
+      "anchor":  "concepts",
+
+      "title":    "Core AI Concepts — No Jargon",
+      "columns":  { "desktop": 3, "tablet": 2, "mobile": 1 },
+
+      "cards": [
+        {
+          "title":       "Machine Learning",
+          "description": "Teaching computers to learn from data instead of following hardcoded rules.",
+          "icon":        "chart-bar"
+        },
+        {
+          "title":       "Large Language Models",
+          "description": "The technology behind ChatGPT. Trained on billions of sentences to predict the next word — extraordinarily well.",
+          "icon":        "chat-bubble-left-right"
+        },
+        {
+          "title":       "Training",
+          "description": "The process of showing an AI millions of examples so it can learn patterns.",
+          "icon":        "academic-cap"
+        },
+        {
+          "title":       "Inference",
+          "description": "When you actually use an AI — asking it a question or generating an image. This is inference.",
+          "icon":        "bolt"
+        },
+        {
+          "title":       "Neural Networks",
+          "description": "The math structure loosely inspired by the brain that most modern AI is built on.",
+          "icon":        "cpu-chip"
+        },
+        {
+          "title":       "Hallucination",
+          "description": "When AI confidently says something wrong. It doesn't know — it predicts. That's the difference.",
+          "icon":        "exclamation-triangle"
+        }
+      ]
+    },
+
+    {
+      "id":      "real_world",
+      "type":    "examples_list",
+      "enabled": true,
+      "anchor":  "examples",
+
+      "title":   "AI You Already Use — Explained",
+      "items": [
+        {
+          "product":     "ChatGPT",
+          "explanation": "A large language model that predicts the most useful next word based on your input and billions of training examples."
+        },
+        {
+          "product":     "Netflix Recommendations",
+          "explanation": "A model trained on what millions of users watched next, predicting what you'll enjoy based on your pattern."
+        },
+        {
+          "product":     "Gmail Smart Reply",
+          "explanation": "A small language model trained on email replies to suggest short, relevant responses."
+        },
+        {
+          "product":     "Google Photos Face Recognition",
+          "explanation": "An image classification model trained on millions of face photos to identify the same person across images."
+        }
+      ]
+    },
+
+    {
+      "id":      "cta_banner",
+      "type":    "cta_banner",
+      "enabled": true,
+
+      "title":    "Want to integrate AI into something you're building?",
+      "cta_primary":   { "text": "Explore App Development", "href": "/apps" },
+      "cta_secondary": { "text": "See Automation",          "href": "/automation" }
+    }
+
+  ]
+}

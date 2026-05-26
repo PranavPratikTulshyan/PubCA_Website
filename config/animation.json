@@ -1,0 +1,66 @@
+{
+  "global_style": "smooth_and_subtle",
+
+  "hover": {
+    "enabled":   true,
+    "duration":  "300ms",
+    "scale":     1.02,
+    "ease":      "ease"
+  },
+
+  "scroll_reveal": {
+    "enabled":   true,
+    "style":     "fade_up",
+    "duration":  "500ms",
+    "delay_step":"80ms",
+    "distance":  "24px",
+    "ease":      "ease-out"
+  },
+
+  "page_transition": {
+    "enabled":   true,
+    "style":     "fade",
+    "duration":  "300ms"
+  },
+
+  "avoid": [
+    "heavy parallax",
+    "spinning objects",
+    "gaming effects",
+    "excessive motion blur",
+    "bouncing elements",
+    "flashing colors"
+  ],
+
+  "reduced_motion": {
+    "respect_prefers_reduced_motion": true,
+    "fallback": "instant"
+  },
+
+  "illustration_system": {
+    "style": "simplified_technical_diagrams",
+
+    "preferred_visuals": [
+      "layered system diagrams",
+      "exploded component views",
+      "modular building blocks",
+      "flow and process visualizations",
+      "car analogy comparisons",
+      "interactive concept breakdowns"
+    ],
+
+    "avoid_visuals": [
+      "hackers or hooded figures",
+      "robots or androids",
+      "dark cyberpunk aesthetics",
+      "generic stock photo coders",
+      "neon AI graphics",
+      "binary code rain"
+    ],
+
+    "color_usage_in_illustrations": {
+      "primary_palette": "primary and neutral tokens only",
+      "accent": "secondary.500 sparingly for highlights"
+    }
+  }
+}

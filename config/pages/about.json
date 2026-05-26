@@ -1,0 +1,102 @@
+{
+  "page": {
+    "route":       "/about",
+    "slug":        "about",
+    "title":       "About — Pranav PT",
+    "description": "Meet Pranav PT — the person on a mission to make technology understandable for every human, from age 11 to 80."
+  },
+
+  "sections": [
+
+    {
+      "id":      "hero",
+      "type":    "page_hero",
+      "enabled": true,
+
+      "badge":       "The Person Behind the Platform",
+      "headline":    "Hi, I'm Pranav.",
+      "subheadline": "I believe technology is not complicated. It's just been explained badly. I'm here to change that.",
+      "background":  "gradient_hero"
+    },
+
+    {
+      "id":      "origin_story",
+      "type":    "split_content",
+      "enabled": true,
+
+      "title": "Why I started this",
+      "body":  "Most people interact with technology every day but have no idea how any of it works. They use apps, AI tools, and automation — but feel dependent, confused, and sometimes even intimidated. I started Pranav PT because I realized the gap isn't intelligence. It's explanation. When you explain technology through real-world analogies — the way you'd explain a car engine to someone who drives one — everything becomes clear.",
+
+      "layout": "text_right_visual_left",
+      "visual": {
+        "type":        "illustration",
+        "description": "A person looking at a transparent, open technology diagram — curious, not afraid"
+      }
+    },
+
+    {
+      "id":      "car_analogy_origin",
+      "type":    "callout_block",
+      "enabled": true,
+
+      "quote":  "Just like car enthusiasts understand engines, gears, and pistons — technology learners should understand code, frontend, servers, automation, and AI. Not to memorize. To think.",
+      "attribution": "— Pranav PT"
+    },
+
+    {
+      "id":      "mission",
+      "type":    "feature_list",
+      "enabled": true,
+
+      "title":   "What I'm here to do",
+
+      "features": [
+        {
+          "icon":        "light-bulb",
+          "title":       "Simplify, not dumb down",
+          "description": "Technology is explained simply enough for an 11-year-old without being condescending to a 40-year-old professional."
+        },
+        {
+          "icon":        "heart",
+          "title":       "Make people fall in love with learning",
+          "description": "The goal is not just to teach — it's to make you genuinely curious and excited about how things work."
+        },
+        {
+          "icon":        "arrow-trending-up",
+          "title":       "From user to builder",
+          "description": "Every person who goes through this journey moves from passively using technology to actively customizing and building with it."
+        }
+      ]
+    },
+
+    {
+      "id":      "topics_covered",
+      "type":    "tag_cloud",
+      "enabled": true,
+
+      "title":  "Topics I Cover",
+      "topics": [
+        "Artificial Intelligence",
+        "App Development",
+        "Automation",
+        "Servers & Hosting",
+        "APIs",
+        "Frontend Development",
+        "No-Code Tools",
+        "AI Workflows",
+        "Operating Systems",
+        "Version Control"
+      ]
+    },
+
+    {
+      "id":      "cta_banner",
+      "type":    "cta_banner",
+      "enabled": true,
+
+      "title":    "Start exploring technology with me.",
+      "cta_primary": { "text": "Explore Technology", "href": "/explore" }
+    }
+
+  ]
+}
