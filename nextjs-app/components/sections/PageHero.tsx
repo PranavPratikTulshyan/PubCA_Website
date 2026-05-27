@@ -1,23 +1,40 @@
-// ============================================================
-// SHELL — implement this component.
-// Config source: config/pages/about.json → sections[0]
-// Read: aiagents/ai-context.json + aiagents/skills/skill-010-nextjs-component-standards.md
-// ============================================================
+'use client';
+
+import { useScrollReveal } from '@/hooks/useScrollReveal';
+import Badge from '@/components/ui/Badge';
 
 interface PageHeroProps {
-  data: Record<string, unknown>;
+  data: {
+    badge?: string;
+    headline?: string;
+    subheadline?: string;
+    [key: string]: unknown;
+  };
 }
 
 export default function PageHero({ data }: PageHeroProps) {
+  const { badge, headline, subheadline } = data;
+  const ref = useScrollReveal<HTMLDivElement>();
+
   return (
-    <div
-      id="pagehero-shell"
-      className="flex items-center justify-center min-h-[200px] border-2 border-dashed border-primary-500 rounded-lg m-4 p-8 bg-primary-50"
-    >
-      <div className="text-center">
-        <p className="font-heading text-lg text-primary-700 font-semibold">PageHero</p>
-        <p className="font-body text-sm text-neutral-500 mt-1">Shell — replace with implementation</p>
+    <section className="bg-gradient-to-br from-primary-50 to-primary-100 min-h-[50vh] flex items-center justify-center px-6 md:px-8 py-16 md:py-24">
+      <div ref={ref} className="scroll-reveal max-w-[800px] mx-auto text-center">
+        {badge && (
+          <div className="mb-6 flex justify-center">
+            <Badge>{badge as string}</Badge>
+          </div>
+        )}
+        {headline && (
+          <h1 className="font-heading font-extrabold text-display-md md:text-display-lg text-neutral-text-primary mb-6 leading-tight">
+            {headline as string}
+          </h1>
+        )}
+        {subheadline && (
+          <p className="font-body text-body-md md:text-body-lg text-neutral-text-secondary leading-relaxed">
+            {subheadline as string}
+          </p>
+        )}
       </div>
-    </div>
+    </section>
   );
 }
