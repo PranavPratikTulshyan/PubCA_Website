@@ -1,0 +1,29 @@
+{
+  "container": {
+    "max_width":        "1280px",
+    "padding_desktop":  "32px",
+    "padding_tablet":   "24px",
+    "padding_mobile":   "16px"
+  },
+
+  "grid": {
+    "columns_desktop": 12,
+    "columns_tablet":  8,
+    "columns_mobile":  4,
+    "gutter":          "24px"
+  },
+
+  "breakpoints": {
+    "mobile":  "480px",
+    "tablet":  "768px",
+    "laptop":  "1024px",
+    "desktop": "1280px",
+    "wide":    "1440px"
+  },
+
+  "section_padding": {
+    "desktop": "128px 0",
+    "tablet":  "96px 0",
+    "mobile":  "72px 0"
+  }
+}

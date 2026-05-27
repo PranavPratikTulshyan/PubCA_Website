@@ -1,0 +1,140 @@
+{
+  "_purpose": "Single source of truth for the Pranav PT website. A Next.js developer should be able to build the entire site using only the files in this /config folder. No content, color, spacing, or layout should be hardcoded anywhere in the codebase.",
+
+  "tech_stack": {
+    "framework":    "Next.js 14+ (App Router)",
+    "styling":      "TailwindCSS — configure tailwind.config.js from design-tokens.json",
+    "icons":        "Heroicons v2 (@heroicons/react)",
+    "fonts":        "Google Fonts via next/font/google — Manrope (headings), Inter (body)",
+    "deployment":   "Vercel"
+  },
+
+  "rendering_strategy": {
+    "default":       "SSG — all pages are statically generated at build time",
+    "revalidation":  "Not needed for v1 (static JSON content)",
+    "note":          "Use generateStaticParams() for dynamic routes like /resources/[slug] and /learnings/[slug]"
+  },
+
+  "folder_structure_recommendation": {
+    "app/":                     "Next.js App Router pages",
+    "app/page.tsx":             "Home page — reads from config/pages/home.json",
+    "app/about/page.tsx":       "About page — reads from config/pages/about.json",
+    "app/resources/page.tsx":   "Resources list — reads from config/pages/resources.json",
+    "app/resources/[slug]/page.tsx": "Individual resource article — renders MD from content/resources/[slug].md",
+    "app/learnings/page.tsx":   "Courses grid — reads from config/pages/learnings.json",
+    "app/learnings/[slug]/page.tsx": "Individual course detail page",
+    "app/my-builts/page.tsx":   "Tools grid — reads from config/pages/my-builts.json",
+    "app/my-builts/[slug]/page.tsx": "Individual tool detail page",
+    "app/talk-to-me/page.tsx":  "Social links + contact form",
+    "components/sections/":     "One React component per section 'component' type (see component_registry below)",
+    "components/ui/":           "Reusable primitives: Button, Card, Badge, Divider, SectionHeader",
+    "config/":                  "ALL content and design config lives here — never import from elsewhere",
+    "content/resources/":       "Markdown (.md) files for individual resource articles"
+  },
+
+  "how_sections_work": {
+    "pattern": "Each page JSON has a 'sections' array. Each section has a 'component' field. The page file maps component names to React components and renders them in order.",
+    "example_page_tsx": [
+      "import sectionComponents from '@/components/sections'",
+      "const page = await import('@/config/pages/home.json')",
+      "return page.sections.map(section => {",
+      "  const Component = sectionComponents[section.component]",
+      "  return <Component key={section.id} {...section} />",
+      "})"
+    ],
+    "note": "All section props come directly from the JSON. Components should be typed to match their JSON shape."
+  },
+
+  "component_registry": {
+    "HeroFullscreen": {
+      "file":        "components/sections/HeroFullscreen.tsx",
+      "used_on":     ["home"],
+      "description": "Full viewport height (100vh) hero. Large headline, subheadline, body text, two CTAs. Left-aligned on desktop, centered on mobile. Gradient background from design-tokens.json gradients.hero."
+    },
+    "AboutTeaser": {
+      "file":        "components/sections/AboutTeaser.tsx",
+      "used_on":     ["home"],
+      "description": "Two-column split. Left: brief bio text + link to /about. Right: stats grid (4 stats). On mobile: stacked."
+    },
+    "JourneyTeaser": {
+      "file":        "components/sections/JourneyTeaser.tsx",
+      "used_on":     ["home"],
+      "description": "Horizontal row of 4 milestone cards showing the arc of the journey. Each card has a date, a short title, and a tag. End of row has a 'See full journey' CTA linking to /about#journey."
+    },
+    "CTABanner": {
+      "file":        "components/sections/CTABanner.tsx",
+      "used_on":     ["home", "about", "resources", "learnings", "my-builts"],
+      "description": "Full-width banner with headline, optional subtitle, and 1-2 CTA buttons. Gradient background."
+    },
+    "PageHero": {
+      "file":        "components/sections/PageHero.tsx",
+      "used_on":     ["about", "resources", "learnings", "my-builts", "talk-to-me"],
+      "description": "Standard page hero — shorter than HeroFullscreen. Badge, headline, subheadline. Used at the top of all inner pages."
+    },
+    "ProfileBlock": {
+      "file":        "components/sections/ProfileBlock.tsx",
+      "used_on":     ["about"],
+      "description": "About Pranav section. Left: name, tagline, expertise tags, hobbies list. Right: stats row (4 stats). Below: expertise areas list."
+    },
+    "Timeline": {
+      "file":        "components/sections/Timeline.tsx",
+      "used_on":     ["about"],
+      "description": "Vertical timeline. Each item has: date, title, description, optional tag (e.g. Milestone/Turning Point/Today), optional external link. Left-side dates on desktop, stacked on mobile. Anchor id: 'journey'."
+    },
+    "ResourcesGrid": {
+      "file":        "components/sections/ResourcesGrid.tsx",
+      "used_on":     ["resources"],
+      "description": "Filterable grid of resource cards. Each card: title, category tag, read_time, description, links to /resources/[slug]. Filter tabs by category rendered above the grid."
+    },
+    "CourseGrid": {
+      "file":        "components/sections/CourseGrid.tsx",
+      "used_on":     ["learnings"],
+      "description": "Grid of course cards. Each card: thumbnail, title, tagline, duration, level, CTA button. Clicking card or CTA navigates to /learnings/[slug] for full detail."
+    },
+    "CourseDetail": {
+      "file":        "components/sections/CourseDetail.tsx",
+      "used_on":     ["learnings/[slug]"],
+      "description": "Full course detail: hero, what_you_learn bullets, day-by-day syllabus accordion/cards, pricing, CTA button that triggers payment flow. Reads from the course object in learnings.json."
+    },
+    "ToolsGrid": {
+      "file":        "components/sections/ToolsGrid.tsx",
+      "used_on":     ["my-builts"],
+      "description": "Grid of tool cards. Each: thumbnail, title, tagline, built_with tags, CTA. Clicking navigates to /my-builts/[slug]."
+    },
+    "ToolDetail": {
+      "file":        "components/sections/ToolDetail.tsx",
+      "used_on":     ["my-builts/[slug]"],
+      "description": "Full tool detail: title, what it solves, features list, built_with tags, pricing, CTA. Reads from the tool object in my-builts.json."
+    },
+    "SocialLinksBlock": {
+      "file":        "components/sections/SocialLinksBlock.tsx",
+      "used_on":     ["talk-to-me"],
+      "description": "Grid of social platform cards. Each: icon, platform name, handle/description, external link. Clean, minimal layout."
+    },
+    "ContactForm": {
+      "file":        "components/sections/ContactForm.tsx",
+      "used_on":     ["talk-to-me"],
+      "description": "Simple form: Name, Email, Message, Submit. On submit, POST to /api/contact. Form config (fields, labels, validation rules) comes from talk-to-me.json."
+    }
+  },
+
+  "payment_flow_note": "The 'action: payment_flow' on CTA buttons in learnings.json and my-builts.json is a placeholder. Payment integration (Razorpay / Stripe) and post-payment email automation will be implemented in a later phase. For v1, the button can link to a Google Form or WhatsApp message.",
+
+  "content_update_workflow": {
+    "add_resource":    "Add a new object to config/pages/resources.json categories[n].items array. Create the MD file at content/resources/[slug].md.",
+    "add_course":      "Add a new course object to config/pages/learnings.json courses array.",
+    "add_tool":        "Add a new tool object to config/pages/my-builts.json tools array.",
+    "update_nav":      "Edit config/components.json navbar.menu_items.",
+    "change_colors":   "Edit config/design-tokens.json colors. Run 'npx tailwindcss' to regenerate."
+  },
+
+  "important_rules": [
+    "Never hardcode any color, spacing, or font value in a component — always reference design-tokens.json via Tailwind classes or CSS variables",
+    "Never hardcode any copy (text, labels, headings) in a component — always read from the JSON config",
+    "Every section component must accept and spread its full JSON section object as props",
+    "All external links must open in a new tab (target='_blank', rel='noopener noreferrer')",
+    "All images must have an alt attribute — sourced from the JSON",
+    "All pages must include the SEO meta from their _page_meta object using Next.js metadata API",
+    "Mobile-first: design for mobile layout first, then add desktop breakpoints"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "brand": {
+    "name": "Pranav PT",
+    "tagline": "Bringing Technology Closer to Humans!",
+    "version": "1.0.0",
+    "logo": {
+      "type": "text",
+      "text": "Pranav PT",
+      "font_family": "Manrope",
+      "font_weight": 700,
+      "note": "Text-based logo for v1. SVG logo planned for v2."
+    }
+  },
+
+  "design_system": {
+    "type": "JSON Driven Modular UI System",
+    "cms_strategy": "static_json",
+    "cms_note": "All content sourced from JSON files in /config. Upgrade path: Contentful or Sanity."
+  },
+
+  "tech_stack": {
+    "framework": {
+      "options_considered": ["Astro", "React", "NextJS", "Vue"],
+      "final_choice": "NextJS",
+      "rationale": "Built-in static generation, image optimization, and seamless Vercel deployment make it the strongest fit for a fast, professional site."
+    },
+    "styling": {
+      "final_choice": "TailwindCSS",
+      "rationale": "Token-based utility classes map directly to this design system's spacing, color, and typography scales."
+    },
+    "icon_library": {
+      "options_considered": ["Lucide", "Heroicons", "Phosphor"],
+      "final_choice": "Heroicons",
+      "rationale": "Lightweight, integrates cleanly with TailwindCSS, and aligns with the calm, professional aesthetic."
+    },
+    "fonts": {
+      "loading_strategy": "Google Fonts CDN",
+      "preload": true,
+      "families": [
+        { "name": "Manrope", "weights": [400, 600, 700, 800], "role": "heading" },
+        { "name": "Inter", "weights": [400, 500, 600], "role": "body" },
+        { "name": "JetBrains Mono", "weights": [400], "role": "code" }
+      ]
+    }
+  },
+
+  "deployment": {
+    "platform": "Vercel",
+    "rationale": "Tightly coupled with Next.js for seamless builds, automatic scaling, and global CDN."
+  },
+
+  "design_philosophy": {
+    "primary_goal": "Make technology emotionally understandable for humans.",
+    "user_feeling": [
+      "Technology is understandable",
+      "I can learn this",
+      "This feels human",
+      "This feels exploratory"
+    ],
+    "avoid_feelings": [
+      "Intimidation",
+      "Complexity overload",
+      "Corporate coldness",
+      "Developer elitism"
+    ]
+  },
+
+  "brand_personality": {
+    "archetype": ["Teacher", "Explorer"],
+    "tone_of_voice": {
+      "primary": ["Warm", "Curious", "Simplified", "Intelligent", "Friendly", "Mentor-like"],
+      "avoid": ["Arrogant", "Overly corporate", "Cyberpunk", "Aggressive startup tone", "Jargon-heavy"]
+    },
+    "emotional_positioning": {
+      "core_emotion": "Curiosity without fear",
+      "trust_signal": "Technology explained simply",
+      "experience_keywords": [
+        "Human",
+        "Interactive",
+        "Understandable",
+        "Modular",
+        "Educational",
+        "Exploratory"
+      ]
+    }
+  },
+
+  "site_pages": {
+    "_note": "These are the only pages in v1. Each maps to a file in config/pages/ and an app router file.",
+    "pages": [
+      { "route": "/",           "config": "config/pages/home.json",        "nextjs_file": "app/page.tsx" },
+      { "route": "/about",      "config": "config/pages/about.json",       "nextjs_file": "app/about/page.tsx" },
+      { "route": "/resources",  "config": "config/pages/resources.json",   "nextjs_file": "app/resources/page.tsx" },
+      { "route": "/learnings",  "config": "config/pages/learnings.json",   "nextjs_file": "app/learnings/page.tsx" },
+      { "route": "/my-builts",  "config": "config/pages/my-builts.json",   "nextjs_file": "app/my-builts/page.tsx" },
+      { "route": "/talk-to-me", "config": "config/pages/talk-to-me.json",  "nextjs_file": "app/talk-to-me/page.tsx" }
+    ],
+    "dynamic_routes": [
+      { "route": "/resources/[slug]",  "content_source": "content/resources/[slug].md",   "nextjs_file": "app/resources/[slug]/page.tsx" },
+      { "route": "/learnings/[slug]",  "content_source": "config/pages/learnings.json",   "nextjs_file": "app/learnings/[slug]/page.tsx" },
+      { "route": "/my-builts/[slug]",  "content_source": "config/pages/my-builts.json",   "nextjs_file": "app/my-builts/[slug]/page.tsx" }
+    ]
+  },
+
+  "v1_scope": {
+    "dark_mode":       false,
+    "photography":     false,
+    "media_assets":    "illustration_and_icon_only",
+    "cms_integration": false,
+    "payment_flow":    "placeholder — Razorpay / Stripe integration in v2",
+    "pages_removed":   ["ai", "apps", "automation", "explore"]
+  }
+}

@@ -1,0 +1,323 @@
+{
+  "_page_meta": {
+    "route":              "/my-builts",
+    "nextjs_file":        "app/my-builts/page.tsx",
+    "title":              "My Builts — Pranav PT",
+    "description":        "Tools and apps built by Pranav PT for Finance professionals — covering document management, GST automation, Excel workflows, and more.",
+    "og_image":           "/og/my-builts.png",
+    "rendering_strategy": "SSG"
+  },
+
+  "_content_model": {
+    "how_it_works":        "The /my-builts page renders a ToolsGrid of cards. Clicking a card navigates to /my-builts/[slug] which renders the ToolDetail component using the matching tool object below.",
+    "slug_routing":        "app/my-builts/[slug]/page.tsx — use generateStaticParams() to pre-generate all slugs from this file",
+    "payment_action_note": "cta.action = 'payment_flow' is a placeholder. For v1, link to Razorpay, Google Form, or WhatsApp. Full payment + email automation to be implemented later.",
+    "cta_label_rationale": "Using 'Get Access' instead of 'Buy Now' — these are tools you access, not products you buy. Consistent with the learning-space identity."
+  },
+
+  "detail_page_layout": {
+    "_nextjs_file": "app/my-builts/[slug]/page.tsx",
+    "_dev_note":    "The detail page renders a ToolDetail component. Slugs come from tools[].slug below. Use generateStaticParams().",
+    "sections_order": [
+      "back_link",
+      "tool_header",
+      "what_it_solves",
+      "features_list",
+      "built_with_tags",
+      "suitable_for_tags",
+      "pricing_and_cta",
+      "contact_cta"
+    ],
+    "back_link":          { "text": "← All Builts", "href": "/my-builts" },
+    "features_layout":    "two_column_checklist",
+    "cta_sticky_mobile":  true,
+    "_note":              "On mobile, the CTA button should be sticky at the bottom of the viewport"
+  },
+
+  "page_hero": {
+    "component":   "PageHero",
+    "badge":       "My Builts",
+    "headline":    "Tools I built because they didn't exist.",
+    "subheadline": "Every tool here solves a real problem I encountered — or someone in the Finance community needed. Built with Python. Shared for everyone."
+  },
+
+  "tools": [
+
+    {
+      "slug":      "efficient-document-management",
+      "status":    "available",
+      "thumbnail": {
+        "src":   "/thumbnails/document-management.png",
+        "alt":   "Efficient Document Management System — DPDP Compliant",
+        "_note": "Replace with actual thumbnail. Recommended: 800x450px webp."
+      },
+
+      "title":   "Efficient Document Management System",
+      "tagline": "The first DPDP Act Compliant document management system for CA Firms.",
+      "tags":    ["Document Management", "DPDP Compliant", "Python", "CA Firms"],
+
+      "what_it_solves": "CA Firms handle hundreds of client documents daily — ITRs, GST filings, audit reports, agreements. These get scattered across WhatsApp, email, local drives, and USB sticks. This system brings all of it into one secure, organized, searchable place — without uploading to third-party cloud platforms.",
+
+      "features": [
+        "Centralized document storage — no third-party cloud dependency",
+        "Client-wise and document-type-wise folder structure",
+        "DPDP Act compliant — data stays within your premises",
+        "Searchable by client, document type, or date",
+        "Access control — team members see only what they need to",
+        "Audit trail — who accessed or modified what and when"
+      ],
+
+      "built_with": ["Python", "Streamlit", "SQLite"],
+
+      "suitable_for": ["CA Firms", "Finance Teams", "Compliance-heavy businesses"],
+
+      "pricing": {
+        "amount":   "PLACEHOLDER_PRICE",
+        "currency": "INR",
+        "_note":    "Replace PLACEHOLDER_PRICE before publishing"
+      },
+
+      "cta": {
+        "text":    "Get Access",
+        "variant": "primary",
+        "action":  "payment_flow"
+      },
+
+      "contact_cta": {
+        "text": "Have questions? Talk to me →",
+        "href": "/talk-to-me"
+      }
+    },
+
+    {
+      "slug":      "gst-reconciliation-automation",
+      "status":    "available",
+      "thumbnail": {
+        "src":   "/thumbnails/gst-reconciliation.png",
+        "alt":   "GST Reconciliation Automation Tool",
+        "_note": "Replace with actual thumbnail."
+      },
+
+      "title":   "GST Reconciliation Automation",
+      "tagline": "Reconcile GSTR-2A/2B with your purchase register in minutes, not hours.",
+      "tags":    ["GST", "Reconciliation", "Excel", "Python", "Finance Automation"],
+
+      "what_it_solves": "GST reconciliation is one of the most tedious tasks in Finance — matching hundreds of invoices across GSTR-2A/2B and purchase registers, finding mismatches, and tracking differences month after month. This tool automates the entire comparison and generates a clean, actionable report.",
+
+      "features": [
+        "Upload GSTR-2A/2B and purchase register — reconciliation runs automatically",
+        "Identifies matched, unmatched, and partially matched invoices",
+        "Highlights discrepancies in GSTIN, invoice number, date, and amount",
+        "Exports results to a formatted Excel report",
+        "Month-over-month tracking across reconciliation runs",
+        "No manual VLOOKUP or pivot tables needed"
+      ],
+
+      "built_with": ["Python", "Pandas", "openpyxl", "Streamlit"],
+
+      "suitable_for": ["CA Firms", "Finance Teams", "GST Practitioners", "Tax Consultants"],
+
+      "pricing": {
+        "amount":   "PLACEHOLDER_PRICE",
+        "currency": "INR",
+        "_note":    "Replace PLACEHOLDER_PRICE before publishing"
+      },
+
+      "cta": {
+        "text":    "Get Access",
+        "variant": "primary",
+        "action":  "payment_flow"
+      },
+
+      "contact_cta": {
+        "text": "Have questions? Talk to me →",
+        "href": "/talk-to-me"
+      }
+    },
+
+    {
+      "slug":      "client-portal-ca-firms",
+      "status":    "available",
+      "thumbnail": {
+        "src":   "/thumbnails/client-portal.png",
+        "alt":   "Interactive Client Portal for CA Firms",
+        "_note": "Replace with actual thumbnail."
+      },
+
+      "title":   "Client Portal for CA Firms",
+      "tagline": "A secure, professional space for your clients to share documents and track their work.",
+      "tags":    ["Client Portal", "CA Practice", "Document Sharing", "Python"],
+
+      "what_it_solves": "CA Firms spend enormous time chasing clients for documents over WhatsApp and email — a mix of informal channels that are impossible to track and not secure. This portal gives each client a dedicated, secure space to upload documents, check the status of their filings, and communicate with the firm.",
+
+      "features": [
+        "Each client gets their own secure login",
+        "Document upload and download with version history",
+        "Work status tracker — clients see where their filing stands",
+        "Automated notifications when work is completed or documents are needed",
+        "Internal team view to manage all clients from one dashboard",
+        "No sensitive documents over WhatsApp or personal email"
+      ],
+
+      "built_with": ["Python", "Streamlit", "SQLite", "Email API"],
+
+      "suitable_for": ["CA Firms", "Tax Consultants", "Compliance Practices"],
+
+      "pricing": {
+        "amount":   "PLACEHOLDER_PRICE",
+        "currency": "INR",
+        "_note":    "Replace PLACEHOLDER_PRICE before publishing"
+      },
+
+      "cta": {
+        "text":    "Get Access",
+        "variant": "primary",
+        "action":  "payment_flow"
+      },
+
+      "contact_cta": {
+        "text": "Have questions? Talk to me →",
+        "href": "/talk-to-me"
+      }
+    },
+
+    {
+      "slug":      "pdf-excel-automation-tools",
+      "status":    "available",
+      "thumbnail": {
+        "src":   "/thumbnails/pdf-excel-tools.png",
+        "alt":   "PDF and Excel Automation Toolkit",
+        "_note": "Replace with actual thumbnail."
+      },
+
+      "title":   "PDF & Excel Automation Toolkit",
+      "tagline": "Stop manually copying tables from PDFs into Excel.",
+      "tags":    ["PDF", "Excel", "Automation", "Python", "Data Extraction"],
+
+      "what_it_solves": "Finance teams regularly receive data in PDF format — bank statements, invoices, GST certificates, audit reports. Extracting this data into Excel manually is slow, error-prone, and mind-numbing. This toolkit automates the extraction and formatting.",
+
+      "features": [
+        "Extract tables from PDFs into Excel with one click",
+        "Merge multiple PDFs into a single file",
+        "Split a large PDF into individual pages or sections",
+        "Extract text, amounts, and dates from invoice PDFs",
+        "Batch process entire folders of PDFs",
+        "Output as structured Excel with correct column headers"
+      ],
+
+      "built_with": ["Python", "pdfplumber", "PyPDF2", "Pandas", "openpyxl"],
+
+      "suitable_for": ["Finance Teams", "CA Firms", "Accounts Departments", "Compliance Teams"],
+
+      "pricing": {
+        "amount":   "PLACEHOLDER_PRICE",
+        "currency": "INR",
+        "_note":    "Replace PLACEHOLDER_PRICE before publishing"
+      },
+
+      "cta": {
+        "text":    "Get Access",
+        "variant": "primary",
+        "action":  "payment_flow"
+      },
+
+      "contact_cta": {
+        "text": "Have questions? Talk to me →",
+        "href": "/talk-to-me"
+      }
+    },
+
+    {
+      "slug":      "gst-automation-power-query",
+      "status":    "available",
+      "thumbnail": {
+        "src":   "/thumbnails/gst-power-query.png",
+        "alt":   "GST Automation via Power Query",
+        "_note": "Replace with actual thumbnail."
+      },
+
+      "title":   "GST Automation via Power Query",
+      "tagline": "For Finance teams who live in Excel — GST reconciliation without writing code.",
+      "tags":    ["GST", "Power Query", "Excel", "No-Code", "Finance"],
+
+      "what_it_solves": "Not everyone wants to learn Python. For Finance professionals who are comfortable in Excel, this Power Query-based solution automates GST data processing, reconciliation, and reporting — entirely within Excel, with no coding required.",
+
+      "features": [
+        "Fully Excel-based — no Python or external tools needed",
+        "Load and transform GSTR data with Power Query automatically",
+        "One-click refresh to update reports with new data",
+        "Dynamic reconciliation tables with automatic mismatch highlighting",
+        "Summary dashboards for management reporting",
+        "Works with Excel 2016 and above"
+      ],
+
+      "built_with": ["Excel", "Power Query", "Power Pivot"],
+
+      "suitable_for": ["Finance Teams", "CA Firms", "GST Practitioners", "Anyone comfortable in Excel"],
+
+      "pricing": {
+        "amount":   "PLACEHOLDER_PRICE",
+        "currency": "INR",
+        "_note":    "Replace PLACEHOLDER_PRICE before publishing"
+      },
+
+      "cta": {
+        "text":    "Get Access",
+        "variant": "primary",
+        "action":  "payment_flow"
+      },
+
+      "contact_cta": {
+        "text": "Have questions? Talk to me →",
+        "href": "/talk-to-me"
+      }
+    },
+
+    {
+      "slug":      "file-folder-management",
+      "status":    "available",
+      "thumbnail": {
+        "src":   "/thumbnails/file-folder.png",
+        "alt":   "File and Folder Management Utilities",
+        "_note": "Replace with actual thumbnail."
+      },
+
+      "title":   "File & Folder Management Utilities",
+      "tagline": "Stop organizing files manually. Let Python do it.",
+      "tags":    ["File Management", "Automation", "Python", "Productivity"],
+
+      "what_it_solves": "Finance teams deal with hundreds of files — monthly reports, client documents, backups, downloads. Manually renaming, sorting, and organizing these is a silent time drain. These utilities automate the entire file management workflow.",
+
+      "features": [
+        "Auto-organize files into folders by date, client name, or file type",
+        "Bulk rename files using a pattern (e.g. ClientName_Month_Year)",
+        "Detect and flag duplicate files across folders",
+        "Archive old files automatically based on date rules",
+        "Watch a folder and trigger actions when new files arrive",
+        "Generate a structured file inventory report in Excel"
+      ],
+
+      "built_with": ["Python", "os", "shutil", "watchdog"],
+
+      "suitable_for": ["Finance Teams", "CA Firms", "Anyone managing large volumes of files"],
+
+      "pricing": {
+        "amount":   "PLACEHOLDER_PRICE",
+        "currency": "INR",
+        "_note":    "Replace PLACEHOLDER_PRICE before publishing"
+      },
+
+      "cta": {
+        "text":    "Get Access",
+        "variant": "primary",
+        "action":  "payment_flow"
+      },
+
+      "contact_cta": {
+        "text": "Have questions? Talk to me →",
+        "href": "/talk-to-me"
+      }
+    }
+
+  ]
+}

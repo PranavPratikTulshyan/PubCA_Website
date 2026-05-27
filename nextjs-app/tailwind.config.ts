@@ -1,0 +1,112 @@
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50:  '#EBF4FC',
+          100: '#D7E9F9',
+          500: '#2F7EBF',
+          600: '#2469A3',
+          700: '#1A5487',
+          900: '#0B2A44',
+        },
+        secondary: {
+          50:  '#FFF7E6',
+          100: '#FFECC0',
+          400: '#F5A623',
+          500: '#E09510',
+          600: '#C07E0A',
+        },
+        neutral: {
+          50:  '#F8F9FA',
+          100: '#F0F2F5',
+          200: '#E2E6EA',
+          400: '#9BA3AF',
+          600: '#4A5568',
+          800: '#1A202C',
+          900: '#0F1117',
+          'bg-primary':   '#FFFFFF',
+          'bg-secondary': '#F8F9FA',
+          'text-primary': '#1A202C',
+          'text-secondary': '#4A5568',
+          'text-muted':   '#9BA3AF',
+          'border':       '#E2E6EA',
+        },
+        success: '#2E7D32',
+        error:   '#C62828',
+        warning: '#E65100',
+        info:    '#1565C0',
+      },
+      fontFamily: {
+        heading: ['Manrope', 'sans-serif'],
+        body:    ['Inter', 'sans-serif'],
+        mono:    ['JetBrains Mono', 'monospace'],
+      },
+      fontSize: {
+        'display-xl': ['3.5rem',  { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        'display-lg': ['2.75rem', { lineHeight: '1.15', letterSpacing: '-0.015em' }],
+        'display-md': ['2.25rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
+        'heading-xl': ['1.875rem', { lineHeight: '1.25' }],
+        'heading-lg': ['1.5rem',   { lineHeight: '1.3' }],
+        'heading-md': ['1.25rem',  { lineHeight: '1.35' }],
+        'heading-sm': ['1.125rem', { lineHeight: '1.4' }],
+        'body-lg':    ['1.125rem', { lineHeight: '1.6' }],
+        'body-md':    ['1rem',     { lineHeight: '1.6' }],
+        'body-sm':    ['0.875rem', { lineHeight: '1.5' }],
+        'caption':    ['0.75rem',  { lineHeight: '1.4' }],
+      },
+      spacing: {
+        '4xs': '2px',
+        '3xs': '4px',
+        '2xs': '8px',
+        'xs':  '12px',
+        'sm':  '16px',
+        'md':  '24px',
+        'lg':  '32px',
+        'xl':  '48px',
+        '2xl': '64px',
+        '3xl': '96px',
+        '4xl': '128px',
+      },
+      borderRadius: {
+        'sm':   '4px',
+        'md':   '8px',
+        'lg':   '12px',
+        'xl':   '16px',
+        '2xl':  '24px',
+        'full': '9999px',
+      },
+      boxShadow: {
+        'card':      '0 2px 8px rgba(0,0,0,0.08)',
+        'card-hover':'0 8px 24px rgba(0,0,0,0.12)',
+        'nav':       '0 1px 4px rgba(0,0,0,0.06)',
+        'modal':     '0 16px 48px rgba(0,0,0,0.18)',
+      },
+      zIndex: {
+        'above':    '10',
+        'dropdown': '20',
+        'sticky':   '30',
+        'navbar':   '40',
+        'overlay':  '50',
+        'modal':    '60',
+        'toast':    '70',
+      },
+      transitionDuration: {
+        'fast':   '150ms',
+        'normal': '300ms',
+        'slow':   '500ms',
+      },
+    },
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
+};
+
+export default config;
