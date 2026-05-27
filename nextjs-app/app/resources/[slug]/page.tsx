@@ -31,15 +31,15 @@ export default function ResourceArticlePage({ params }: { params: { slug: string
 
   return (
     <article className="max-w-[720px] mx-auto px-8 py-24">
-      <a href="/resources" className="font-body text-sm text-primary-500 hover:underline">
+      <a href="/resources" className="font-body text-body-sm text-primary-500 hover:underline">
         &larr; All Resources
       </a>
       <div className="mt-6 flex gap-3 items-center">
-        <span className="font-body text-xs bg-primary-50 text-primary-700 px-3 py-1 rounded-full">
+        <span className="font-body text-caption bg-primary-50 text-primary-700 px-3 py-1 rounded-full">
           {data.category}
         </span>
-        <span className="font-body text-xs text-neutral-text-muted">{data.read_time}</span>
-        <span className="font-body text-xs text-neutral-text-muted">{data.published_date}</span>
+        <span className="font-body text-caption text-neutral-text-muted">{data.read_time}</span>
+        <span className="font-body text-caption text-neutral-text-muted">{data.published_date}</span>
       </div>
       <div className="prose prose-lg font-body text-neutral-text-primary max-w-none mt-8">
         <MDXRemote source={content} />
