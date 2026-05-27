@@ -6,6 +6,9 @@ nextjs-app/.next/
 nextjs-app/node_modules/
 nextjs-app/out/
 
+# TypeScript incremental build cache — auto-generated, never commit
+nextjs-app/tsconfig.tsbuildinfo
+
 # Env files
 .env
 .env.local
