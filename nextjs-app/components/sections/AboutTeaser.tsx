@@ -1,23 +1,61 @@
-// ============================================================
-// SHELL — implement this component.
-// Config source: config/pages/home.json → sections[1]
-// Read: aiagents/ai-context.json + aiagents/skills/skill-010-nextjs-component-standards.md
-// ============================================================
+'use client';
+
+import { useScrollReveal } from '@/hooks/useScrollReveal';
+import SectionHeader from '@/components/ui/SectionHeader';
+import Link from 'next/link';
 
 interface AboutTeaserProps {
   data: Record<string, unknown>;
 }
 
 export default function AboutTeaser({ data }: AboutTeaserProps) {
+  const { eyebrow, title, body, link, stats } = data as {
+    eyebrow?: string;
+    title?: string;
+    body?: string;
+    link?: { text: string; href: string };
+    stats?: Array<{ value: string; label: string; icon: string }>;
+  };
+
+  const statsArray = stats ?? [];
+  const ctaLink = link ?? { text: '', href: '/' };
+  const ref = useScrollReveal<HTMLDivElement>();
+
   return (
-    <div
-      id="aboutteaser-shell"
-      className="flex items-center justify-center min-h-[200px] border-2 border-dashed border-primary-500 rounded-lg m-4 p-8 bg-primary-50"
-    >
-      <div className="text-center">
-        <p className="font-heading text-lg text-primary-700 font-semibold">AboutTeaser</p>
-        <p className="font-body text-sm text-neutral-500 mt-1">Shell — replace with implementation</p>
+    <section ref={ref} className="scroll-reveal bg-white py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 grid gap-16 md:grid-cols-2 items-center">
+        <div>
+          <SectionHeader eyebrow={eyebrow} title={title ?? ''} align="left" />
+          {body && (
+            <p className="font-body text-body-md text-neutral-text-secondary mt-6 leading-relaxed">
+              {body}
+            </p>
+          )}
+          {ctaLink?.href && (
+            <Link
+              href={ctaLink.href}
+              className="font-body text-body-md text-primary-500 hover:text-primary-700 transition-colors mt-4 inline-block"
+            >
+              {ctaLink.text}
+            </Link>
+          )}
+        </div>
+
+        <div>
+          <div className="grid grid-cols-2 gap-8">
+            {statsArray.map((stat) => (
+              <div key={stat.label}>
+                <p className="font-heading font-extrabold text-display-md text-primary-500">
+                  {stat.value}
+                </p>
+                <p className="font-body text-body-sm text-neutral-text-secondary mt-1">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
