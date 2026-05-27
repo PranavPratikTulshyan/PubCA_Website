@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Syllabus: Automation with Python & AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface2: #1a1a26;
+    --border: rgba(255,255,255,0.07);
+    --accent: #7c6bff;
+    --accent2: #ff6b9d;
+    --accent3: #00e5c0;
+    --accent4: #ffb347;
+    --text: #f0eeff;
+    --muted: #8884a8;
+    --tag-bg: rgba(124,107,255,0.12);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    padding: 40px 20px;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Background grid */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(124,107,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124,107,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Glow blobs */
+  body::after {
+    content: '';
+    position: fixed;
+    top: -200px; left: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(124,107,255,0.12) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .blob2 {
+    position: fixed;
+    bottom: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(0,229,192,0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* HEADER */
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--tag-bg);
+    border: 1px solid rgba(124,107,255,0.3);
+    color: var(--accent);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    background: linear-gradient(135deg, #fff 30%, var(--accent) 70%, var(--accent2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 14px;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 28px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .meta-row {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .meta-item .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent3);
+    box-shadow: 0 0 8px var(--accent3);
+  }
+
+  /* DAYS GRID */
+  .days-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .day-full { grid-column: 1 / -1; }
+
+  /* DAY CARD */
+  .day-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .day-card:hover {
+    border-color: rgba(124,107,255,0.25);
+    transform: translateY(-2px);
+  }
+
+  .day-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--card-accent, linear-gradient(90deg, var(--accent), var(--accent2)));
+    border-radius: 16px 16px 0 0;
+  }
+
+  .day-card .day-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .day-card h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  .topics {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .topic-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: #b8b5d0;
+    line-height: 1.45;
+  }
+
+  .topic-item::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--item-color, var(--accent));
+    margin-top: 5px;
+    flex-shrink: 0;
+    box-shadow: 0 0 6px var(--item-color, var(--accent));
+  }
+
+  /* Tag pills */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 100px;
+    border: 1px solid;
+    opacity: 0.75;
+  }
+
+  .tag-purple { color: var(--accent); border-color: rgba(124,107,255,0.35); background: rgba(124,107,255,0.08); }
+  .tag-green { color: var(--accent3); border-color: rgba(0,229,192,0.3); background: rgba(0,229,192,0.07); }
+  .tag-pink { color: var(--accent2); border-color: rgba(255,107,157,0.3); background: rgba(255,107,157,0.08); }
+  .tag-orange { color: var(--accent4); border-color: rgba(255,179,71,0.3); background: rgba(255,179,71,0.08); }
+
+  /* Day 7-8 special */
+  .day-card.capstone {
+    background: linear-gradient(135deg, #12121a, #1a1226);
+    border-color: rgba(124,107,255,0.2);
+  }
+
+  .capstone h2 { font-size: 20px; }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .project-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .project-box strong {
+    display: block;
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: gap;
+    gap: 16px;
+  }
+
+  .footer-left {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .outcome-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .outcome-pill {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: #9d9ac0;
+  }
+
+  @media (max-width: 600px) {
+    .days-grid { grid-template-columns: 1fr; }
+    .day-full { grid-column: 1; }
+    .project-grid { grid-template-columns: 1fr 1fr; }
+    .footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="blob2"></div>
+
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="badge">8-Day Intensive Program</div>
+    <h1>Automation with<br>Python & AI</h1>
+    <p class="subtitle">A hands-on course designed to turn everyday office tasks into automated workflows — using Python, AI tools, Google Suite, and no-code bridges.</p>
+    <div class="meta-row">
+      <div class="meta-item"><span class="dot"></span> 8 Days · Beginner to Advanced</div>
+      <div class="meta-item"><span class="dot" style="background:#ff6b9d;box-shadow:0 0 8px #ff6b9d"></span> Live Projects · Real Use Cases</div>
+      <div class="meta-item"><span class="dot" style="background:#ffb347;box-shadow:0 0 8px #ffb347"></span> Local Installation · Easy Setup -Google Collab</div>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <div class="days-grid">
+
+    <!-- DAY 1 -->
+    <div class="day-card" style="--card-accent: linear-gradient(90deg,#7c6bff,#a78bfa)">
+      <div class="day-num">Day 01</div>
+      <h2>Automation Basics & Mindset</h2>
+      <div class="topics">
+        <div class="topic-item" style="--item-color:#7c6bff">Windows Command Prompt & PowerShell basics</div>
+        <div class="topic-item" style="--item-color:#7c6bff">Writing & running Batch (.bat) scripts</div>
+        <div class="topic-item" style="--item-color:#7c6bff">Scheduling tasks with Windows Task Scheduler</div>
+        <div class="topic-item" style="--item-color:#7c6bff">Automation mindset: identify what to automate</div>
+        <div class="topic-item" style="--item-color:#7c6bff">File operations via command line (copy, move, rename)</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-purple">CMD</span>
+        <span class="tag tag-purple">Batch Scripting</span>
+        <span class="tag tag-purple">Task Scheduler</span>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day-card" style="--card-accent: linear-gradient(90deg,#00e5c0,#38bdf8)">
+      <div class="day-num">Day 02</div>
+      <h2>Python Foundations</h2>
+      <div class="topics">
+        <div class="topic-item" style="--item-color:#00e5c0">Google Colab setup & navigation</div>
+        <div class="topic-item" style="--item-color:#00e5c0">Variables, data types, and operators</div>
+        <div class="topic-item" style="--item-color:#00e5c0">Input/output and basic string formatting</div>
+        <div class="topic-item" style="--item-color:#00e5c0">Writing and running your first Python scripts</div>
+        <div class="topic-item" style="--item-color:#00e5c0">Installing & importing Python libraries</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-green">Python</span>
+        <span class="tag tag-green">Google Colab</span>
+        <span class="tag tag-green">pip</span>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="day-card" style="--card-accent: linear-gradient(90deg,#ff6b9d,#f87171)">
+      <div class="day-num">Day 03</div>
+      <h2>Core Python Logic</h2>
+      <div class="topics">
+        <div class="topic-item" style="--item-color:#ff6b9d">Lists, tuples, and dictionaries</div>
+        <div class="topic-item" style="--item-color:#ff6b9d">Loops: for, while, list comprehensions</div>
+        <div class="topic-item" style="--item-color:#ff6b9d">Conditionals and logical operators</div>
+        <div class="topic-item" style="--item-color:#ff6b9d">Functions, arguments, and return values</div>
+        <div class="topic-item" style="--item-color:#ff6b9d">Error handling with try/except</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-pink">Logic</span>
+        <span class="tag tag-pink">Functions</span>
+        <span class="tag tag-pink">Data Structures</span>
+      </div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div class="day-card" style="--card-accent: linear-gradient(90deg,#ffb347,#fde68a)">
+      <div class="day-num">Day 04</div>
+      <h2>File, Excel & Google Suite Automation</h2>
+      <div class="topics">
+        <div class="topic-item" style="--item-color:#ffb347">Running .py scripts locally & scheduling with cron/Task Scheduler</div>
+        <div class="topic-item" style="--item-color:#ffb347">File handling: read, write, move, rename with os & shutil</div>
+        <div class="topic-item" style="--item-color:#ffb347">Pandas intro: read/write Excel, filter & transform data</div>
+        <div class="topic-item" style="--item-color:#ffb347">Google Sheets API: read & write data from Python</div>
+        <div class="topic-item" style="--item-color:#ffb347">Google Drive API: upload, download, organize files</div>
+        <div class="topic-item" style="--item-color:#ffb347">Working with JSON: parse, modify, and save data</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-orange">Pandas</span>
+        <span class="tag tag-orange">Google Sheets API</span>
+        <span class="tag tag-orange">JSON</span>
+        <span class="tag tag-orange">Drive API</span>
+      </div>
+    </div>
+
+    <!-- DAY 5 -->
+    <div class="day-card day-full" style="--card-accent: linear-gradient(90deg,#38bdf8,#00e5c0,#7c6bff)">
+      <div class="day-num">Day 05</div>
+      <h2>Real-World Automation Use Cases</h2>
+      <div class="topics" style="display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;">
+        <div class="topic-item" style="--item-color:#38bdf8">Advanced Excel: auto-generate reports, charts & summaries</div>
+        <div class="topic-item" style="--item-color:#38bdf8">PDF automation: merge, split, extract text (PyPDF2 / pdfplumber)</div>
+        <div class="topic-item" style="--item-color:#38bdf8">Email automation: send bulk emails via smtplib / Gmail API</div>
+        <div class="topic-item" style="--item-color:#00e5c0">Google Apps Script (AppScript): automate Sheets, Docs & Forms</div>
+        <div class="topic-item" style="--item-color:#00e5c0">AppScript triggers: time-based & event-based automation</div>
+        <div class="topic-item" style="--item-color:#00e5c0">Web scraping basics: requests + BeautifulSoup</div>
+        <div class="topic-item" style="--item-color:#7c6bff">Working with APIs: REST, authentication & JSON responses</div>
+        <div class="topic-item" style="--item-color:#7c6bff">AI integration: using OpenAI / Gemini API in automation scripts</div>
+      </div>
+      <div class="tags" style="margin-top:16px">
+        <span class="tag tag-green">AppScript</span>
+        <span class="tag tag-green">Gmail API</span>
+        <span class="tag tag-purple">OpenAI API</span>
+        <span class="tag tag-orange">PDF</span>
+        <span class="tag tag-pink">Web Scraping</span>
+        <span class="tag tag-green">REST APIs</span>
+      </div>
+    </div>
+
+    <!-- DAY 6 -->
+    <div class="day-card day-full" style="--card-accent: linear-gradient(90deg,#ff6b9d,#7c6bff,#00e5c0)">
+      <div class="day-num">Day 06</div>
+      <h2>Advanced Tools: GUI, Keyboard Simulation & App Building</h2>
+      <div class="topics" style="display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;">
+        <div class="topic-item" style="--item-color:#ff6b9d">PyAutoGUI: mouse control, screen interaction & screenshots</div>
+        <div class="topic-item" style="--item-color:#ff6b9d">Keyboard simulation: hotkeys, typing, keypress automation</div>
+        <div class="topic-item" style="--item-color:#7c6bff">Building desktop GUI apps with Tkinter</div>
+        <div class="topic-item" style="--item-color:#7c6bff">Building web apps with Streamlit (share via browser link)</div>
+        <div class="topic-item" style="--item-color:#00e5c0">Packaging scripts into standalone .EXE files with PyInstaller</div>
+        <div class="topic-item" style="--item-color:#00e5c0">Deploying Streamlit apps to the cloud (Streamlit Cloud / Colab)</div>
+      </div>
+      <div class="tags" style="margin-top:16px">
+        <span class="tag tag-pink">PyAutoGUI</span>
+        <span class="tag tag-pink">Keyboard Sim</span>
+        <span class="tag tag-purple">Tkinter</span>
+        <span class="tag tag-purple">Streamlit</span>
+        <span class="tag tag-green">PyInstaller</span>
+        <span class="tag tag-green">.EXE Creation</span>
+      </div>
+    </div>
+
+    <!-- DAY 7-8 -->
+    <div class="day-card day-full capstone" style="--card-accent: linear-gradient(90deg,#7c6bff,#ff6b9d,#ffb347,#00e5c0)">
+      <div class="day-num">Day 07 — 08</div>
+      <h2>🚀 Capstone: Build Your Own Automation Solutions</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.6;">Apply everything learned to build complete, real-world automation projects. Students choose or are assigned a project from their own work context and present it on Day 8.</p>
+
+      <div class="project-grid">
+        <div class="project-box">
+          <strong>📊 Report Bot</strong>
+          Auto-pull data from Sheets, generate Excel report & email it daily
+        </div>
+        <div class="project-box">
+          <strong>📁 File Organizer</strong>
+          Watch a folder, auto-sort files by type/date using Python
+        </div>
+        <div class="project-box">
+          <strong>🤖 AI Chat App</strong>
+          Streamlit app powered by GPT/Gemini for Q&A or document analysis
+        </div>
+        <div class="project-box">
+          <strong>📧 Email Dispatcher</strong>
+          Bulk personalised email sender from an Excel/Sheets contact list
+        </div>
+        <div class="project-box">
+          <strong>📝 Form-to-Sheet Bot</strong>
+          Google Form submissions → auto-process via AppScript + email alert
+        </div>
+        <div class="project-box">
+          <strong>🖥️ Desktop Automation</strong>
+          GUI app that automates a repetitive daily computer task end-to-end
+        </div>
+      </div>
+
+      <div class="tags" style="margin-top:18px">
+        <span class="tag tag-purple">Project Presentation</span>
+        <span class="tag tag-green">Peer Review</span>
+        <span class="tag tag-orange">Certificate of Completion</span>
+      </div>
+    </div>
+
+  </div><!-- end grid -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <strong style="color:var(--text);font-family:'Syne',sans-serif;">Course Outcomes</strong><br>
+      By end of Day 8, learners can automate real office tasks independently.
+    </div>
+    <div class="outcome-pills">
+      <span class="outcome-pill">🐍 Python Scripting</span>
+      <span class="outcome-pill">📊 Excel & Sheets Automation</span>
+      <span class="outcome-pill">🤖 AI-Powered Tools</span>
+      <span class="outcome-pill">📦 Build & Deploy Apps</span>
+      <span class="outcome-pill">⚙️ AppScript</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

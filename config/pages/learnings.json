@@ -1,0 +1,225 @@
+{
+  "_page_meta": {
+    "route":              "/learnings",
+    "nextjs_file":        "app/learnings/page.tsx",
+    "title":              "Learnings — Pranav PT",
+    "description":        "Structured batches and courses on Python, Automation, and AI for Finance professionals. Learn by doing — with real projects.",
+    "og_image":           "/og/learnings.png",
+    "rendering_strategy": "SSG"
+  },
+
+  "_content_model": {
+    "how_it_works":         "The /learnings page renders a grid of CourseGrid cards. Clicking a card navigates to /learnings/[slug] which renders the CourseDetail component using the matching course object below.",
+    "slug_routing":         "app/learnings/[slug]/page.tsx — use generateStaticParams() to pre-generate all slugs from this file",
+    "payment_action_note":  "cta.action = 'payment_flow' is a placeholder. For v1, link to a Razorpay payment page, Google Form, or WhatsApp. Full payment + email automation to be implemented later.",
+    "cta_label_rationale":  "Using 'Join the Batch' instead of 'Pay Now' — consistent with the 'learning space, not a store' identity. Functionally the same: triggers the payment flow."
+  },
+
+  "detail_page_layout": {
+    "_nextjs_file": "app/learnings/[slug]/page.tsx",
+    "_dev_note":    "The detail page renders a CourseDetail component. Slugs come from courses[].slug below. Use generateStaticParams().",
+    "sections_order": [
+      "back_link",
+      "course_header",
+      "what_you_learn_grid",
+      "day_by_day_syllabus",
+      "capstone_projects",
+      "outcomes_row",
+      "pricing_and_cta",
+      "contact_cta"
+    ],
+    "back_link":          { "text": "← All Learnings", "href": "/learnings" },
+    "syllabus_style":     "accordion_or_cards",
+    "cta_sticky_mobile":  true,
+    "_note":              "On mobile, the CTA button should be sticky at the bottom of the viewport"
+  },
+
+  "page_hero": {
+    "component":   "PageHero",
+    "badge":       "Learnings",
+    "headline":    "Learn by building real things.",
+    "subheadline": "Structured batches designed for Finance professionals who want to automate their work and understand technology from the inside out."
+  },
+
+  "courses": [
+
+    {
+      "slug":      "automation-python-ai-8-days",
+      "status":    "active",
+      "thumbnail": {
+        "src":     "/thumbnails/automation-python-ai.png",
+        "alt":     "Automation with Python and AI — 8 Day Intensive",
+        "_note":   "Replace with actual thumbnail image. Recommended size: 800x450px (16:9), webp format."
+      },
+
+      "title":    "Automation with Python & AI",
+      "tagline":  "Turn your office tasks into automated workflows in 8 days.",
+      "badge":    "8-Day Intensive",
+      "level":    "Beginner to Advanced",
+      "duration": "8 Days",
+      "schedule": {
+        "type":    "Live Batch (Weekend + Weekday)",
+        "format":  "Online",
+        "_note":   "Update with actual batch dates and timing before publishing"
+      },
+
+      "description": "A hands-on course designed to take a Finance professional with zero coding background from spreadsheets to building real automation tools — using Python, AI APIs, Google Suite, and no-code bridges. Every concept is taught through a real Finance use case, not abstract programming exercises.",
+
+      "what_you_learn": [
+        "Automate repetitive office tasks using Python scripts",
+        "Read, write, and process Excel and Google Sheets with Pandas",
+        "Interact with Google Drive and Gmail APIs programmatically",
+        "Generate automated reports and email them on a schedule",
+        "Use OpenAI / Gemini API to add AI capabilities to your scripts",
+        "Build and share web apps using Streamlit — no HTML required",
+        "Package scripts into standalone .EXE files for non-technical colleagues",
+        "Build and present a complete automation project on Day 8"
+      ],
+
+      "outcomes": [
+        "Python Scripting",
+        "Excel & Sheets Automation",
+        "AI-Powered Tools",
+        "Build & Deploy Apps",
+        "Google Apps Script"
+      ],
+
+      "syllabus": [
+        {
+          "day":     1,
+          "title":   "Automation Basics & Mindset",
+          "topics": [
+            "Windows Command Prompt & PowerShell basics",
+            "Writing & running Batch (.bat) scripts",
+            "Scheduling tasks with Windows Task Scheduler",
+            "Automation mindset: identifying what to automate",
+            "File operations via command line (copy, move, rename)"
+          ],
+          "tags": ["CMD", "Batch Scripting", "Task Scheduler"]
+        },
+        {
+          "day":     2,
+          "title":   "Python Foundations",
+          "topics": [
+            "Google Colab setup & navigation",
+            "Variables, data types, and operators",
+            "Input/output and basic string formatting",
+            "Writing and running your first Python scripts",
+            "Installing & importing Python libraries"
+          ],
+          "tags": ["Python", "Google Colab", "pip"]
+        },
+        {
+          "day":     3,
+          "title":   "Core Python Logic",
+          "topics": [
+            "Lists, tuples, and dictionaries",
+            "Loops: for, while, list comprehensions",
+            "Conditionals and logical operators",
+            "Functions, arguments, and return values",
+            "Error handling with try/except"
+          ],
+          "tags": ["Logic", "Functions", "Data Structures"]
+        },
+        {
+          "day":     4,
+          "title":   "File, Excel & Google Suite Automation",
+          "topics": [
+            "Running .py scripts locally & scheduling with cron/Task Scheduler",
+            "File handling: read, write, move, rename with os & shutil",
+            "Pandas intro: read/write Excel, filter & transform data",
+            "Google Sheets API: read & write data from Python",
+            "Google Drive API: upload, download, organize files",
+            "Working with JSON: parse, modify, and save data"
+          ],
+          "tags": ["Pandas", "Google Sheets API", "JSON", "Drive API"]
+        },
+        {
+          "day":     5,
+          "title":   "Real-World Automation Use Cases",
+          "topics": [
+            "Advanced Excel: auto-generate reports, charts & summaries",
+            "PDF automation: merge, split, extract text (PyPDF2 / pdfplumber)",
+            "Email automation: send bulk emails via smtplib / Gmail API",
+            "Google Apps Script: automate Sheets, Docs & Forms",
+            "AppScript triggers: time-based & event-based automation",
+            "Web scraping basics: requests + BeautifulSoup",
+            "Working with APIs: REST, authentication & JSON responses",
+            "AI integration: using OpenAI / Gemini API in automation scripts"
+          ],
+          "tags": ["AppScript", "Gmail API", "OpenAI API", "PDF", "Web Scraping", "REST APIs"]
+        },
+        {
+          "day":     6,
+          "title":   "Advanced Tools: GUI, Keyboard Simulation & App Building",
+          "topics": [
+            "PyAutoGUI: mouse control, screen interaction & screenshots",
+            "Keyboard simulation: hotkeys, typing, keypress automation",
+            "Building desktop GUI apps with Tkinter",
+            "Building web apps with Streamlit (shareable via browser link)",
+            "Packaging scripts into standalone .EXE files with PyInstaller",
+            "Deploying Streamlit apps to the cloud"
+          ],
+          "tags": ["PyAutoGUI", "Keyboard Sim", "Tkinter", "Streamlit", "PyInstaller", ".EXE Creation"]
+        },
+        {
+          "day":     "7-8",
+          "title":   "Capstone: Build Your Own Automation Solution",
+          "description": "Apply everything learned to build a complete, real-world automation project. Students choose a project from their own work context and present it on Day 8.",
+          "topics": [
+            "Guided project building session",
+            "Peer review and feedback",
+            "Live project presentations",
+            "Certificate of Completion"
+          ],
+          "sample_projects": [
+            {
+              "title":       "Report Bot",
+              "description": "Auto-pull data from Sheets, generate Excel report & email it daily"
+            },
+            {
+              "title":       "File Organizer",
+              "description": "Watch a folder, auto-sort files by type/date using Python"
+            },
+            {
+              "title":       "AI Chat App",
+              "description": "Streamlit app powered by GPT/Gemini for Q&A or document analysis"
+            },
+            {
+              "title":       "Email Dispatcher",
+              "description": "Bulk personalised email sender from an Excel/Sheets contact list"
+            },
+            {
+              "title":       "Form-to-Sheet Bot",
+              "description": "Google Form submissions → auto-process via AppScript + email alert"
+            },
+            {
+              "title":       "Desktop Automation",
+              "description": "GUI app that automates a repetitive daily computer task end-to-end"
+            }
+          ],
+          "tags": ["Project Presentation", "Peer Review", "Certificate of Completion"]
+        }
+      ],
+
+      "pricing": {
+        "amount":   "PLACEHOLDER_PRICE",
+        "currency": "INR",
+        "_note":    "Replace PLACEHOLDER_PRICE with actual batch price before publishing"
+      },
+
+      "cta": {
+        "text":    "Join the Batch",
+        "variant": "primary",
+        "action":  "payment_flow",
+        "_note":   "For v1: link to Razorpay, Google Form, or WhatsApp. Full payment flow to be built in a later phase."
+      },
+
+      "contact_cta": {
+        "text": "Have questions? Talk to me →",
+        "href": "/talk-to-me"
+      }
+    }
+
+  ]
+}

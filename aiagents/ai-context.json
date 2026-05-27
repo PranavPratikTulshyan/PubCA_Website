@@ -1,0 +1,180 @@
+{
+  "_purpose": "Master context file for all AI agents working on the Pranav PT website. Read this file completely before writing any code. Cross-check your final output against every section of this file before submitting. Any discrepancy between your output and this file must be resolved before submission.",
+
+  "_instruction_to_agent": [
+    "1. Read this file in full before writing a single line of code.",
+    "2. Read the required skills listed in your phase prompt.",
+    "3. Write your code.",
+    "4. Before submitting, re-read the 'critical_rules' and 'must_never_do' sections and verify your output violates none of them.",
+    "5. State in your response: 'I have verified against ai-context.json — no discrepancies found.' If you find a discrepancy, state it explicitly and resolve it."
+  ],
+
+  "project_identity": {
+    "site_name":    "Pranav PT",
+    "domain":       "pranavpt.com",
+    "tagline":      "Bringing Technology Closer to Humans!",
+    "identity":     "Personal brand site for a self-taught Finance Technologist and educator. This is a LEARNING SPACE — not a sales page. The tone is warm, human, curious, mentor-like. Never corporate, never pushy.",
+    "what_this_is_not": "Not an educational platform. Not a product store. Not a portfolio. It is the personal space of one person sharing what he has learned."
+  },
+
+  "tech_stack": {
+    "framework":          "Next.js 14 — App Router ONLY. No pages/ directory. No getStaticProps. No getServerSideProps.",
+    "styling":            "TailwindCSS — only use classes that map to design-tokens.json. No arbitrary Tailwind values like text-[#123456] unless the token is not in the config.",
+    "language":           "TypeScript — all files are .tsx or .ts. No .js or .jsx.",
+    "icons":              "Heroicons v2 ONLY — import from @heroicons/react/24/outline or /24/solid. No other icon library.",
+    "fonts":              "Google Fonts via next/font/google — Manrope (headings), Inter (body), JetBrains Mono (code only).",
+    "animation":          "CSS transitions only for hover/micro-interactions. Intersection Observer API for scroll-reveal. No Framer Motion, no GSAP, no AOS unless explicitly instructed.",
+    "markdown":           "next-mdx-remote for rendering .md files in /resources/[slug]",
+    "deployment":         "Vercel — no custom server, no Docker, no express",
+    "node_version":       "18+",
+    "package_manager":    "npm"
+  },
+
+  "folder_structure": {
+    "app/":                          "Next.js App Router — all pages here",
+    "app/page.tsx":                  "Home page",
+    "app/about/page.tsx":            "About page",
+    "app/resources/page.tsx":        "Resources list page",
+    "app/resources/[slug]/page.tsx": "Individual resource article",
+    "app/learnings/page.tsx":        "Courses grid",
+    "app/learnings/[slug]/page.tsx": "Individual course detail",
+    "app/my-builts/page.tsx":        "Tools grid",
+    "app/my-builts/[slug]/page.tsx": "Individual tool detail",
+    "app/talk-to-me/page.tsx":       "Social links + contact form",
+    "app/api/contact/route.ts":      "Contact form POST handler",
+    "app/layout.tsx":                "Root layout — navbar + footer + font setup",
+    "components/sections/":         "One .tsx file per 'component' value in page JSONs",
+    "components/sections/index.ts": "Exports sectionComponents map — keys must match JSON 'component' values exactly",
+    "components/ui/":               "Button.tsx, Card.tsx, Badge.tsx, SectionHeader.tsx, Divider.tsx",
+    "config/":                      "ALL content and design — never hardcode values that exist here",
+    "content/resources/":           "Markdown files for /resources/[slug]",
+    "public/thumbnails/":           "Course and tool images (800x450 webp)",
+    "public/og/":                   "Open Graph images per page (1200x630 png)"
+  },
+
+  "design_system_summary": {
+    "primary_color":   "#2F7EBF",
+    "secondary_color": "#F97316",
+    "text_primary":    "#1A1A1A",
+    "text_secondary":  "#4B5563",
+    "background":      "#F9FBFC",
+    "surface":         "#FFFFFF",
+    "border":          "#DCE3EA",
+    "heading_font":    "Manrope",
+    "body_font":       "Inter",
+    "full_tokens_in":  "config/design-tokens.json — this summary is for quick reference only. Always use the full token file for implementation."
+  },
+
+  "component_registry": {
+    "_note": "These are the ONLY valid values for the 'component' field in page JSONs. The sectionComponents map in components/sections/index.ts must export all of these with matching keys.",
+    "valid_components": [
+      "HeroFullscreen",
+      "AboutTeaser",
+      "JourneyTeaser",
+      "CTABanner",
+      "PageHero",
+      "ProfileBlock",
+      "Timeline",
+      "ResourcesGrid",
+      "CourseGrid",
+      "CourseDetail",
+      "ToolsGrid",
+      "ToolDetail",
+      "SocialLinksBlock",
+      "ContactForm"
+    ]
+  },
+
+  "naming_conventions": {
+    "component_files":   "PascalCase — HeroFullscreen.tsx, CTABanner.tsx",
+    "page_files":        "lowercase — page.tsx, layout.tsx (Next.js convention)",
+    "config_files":      "kebab-case — design-tokens.json, my-builts.json",
+    "css_classes":       "Tailwind utility classes only — no custom CSS files unless absolutely unavoidable",
+    "function_names":    "camelCase",
+    "type_names":        "PascalCase with 'Props' suffix — HeroFullscreenProps, TimelineProps",
+    "constants":         "UPPER_SNAKE_CASE",
+    "route_segments":    "kebab-case — /my-builts, /talk-to-me, /resources/[slug]"
+  },
+
+  "config_consumption_rules": {
+    "rule_1": "Never hardcode any color value. Import from config/design-tokens.json or use the Tailwind alias.",
+    "rule_2": "Never hardcode any text/copy inside a component. All copy comes from the page JSON section object passed as props.",
+    "rule_3": "Never hardcode spacing, border-radius, or shadow values. Use Tailwind classes that map to design-tokens.json.",
+    "rule_4": "Every section component receives its full JSON section object as props and spreads it. No partial prop picking unless typed explicitly.",
+    "rule_5": "Page metadata (title, description, og_image) comes from _page_meta in each page JSON, wired via Next.js Metadata API."
+  },
+
+  "seo_pattern": {
+    "_note": "Use this exact pattern in every page file",
+    "pattern": [
+      "import pageConfig from '@/config/pages/[page].json'",
+      "import type { Metadata } from 'next'",
+      "export const metadata: Metadata = {",
+      "  title: pageConfig._page_meta.title,",
+      "  description: pageConfig._page_meta.description,",
+      "  openGraph: { images: [pageConfig._page_meta.og_image] }",
+      "}"
+    ]
+  },
+
+  "rendering_rules": {
+    "all_pages": "SSG (Static Site Generation) — no 'use client' on page files",
+    "interactive_components": "'use client' directive only on components with useState, useEffect, event handlers (e.g., ContactForm, mobile menu toggle)",
+    "dynamic_routes": "Use generateStaticParams() for /resources/[slug], /learnings/[slug], /my-builts/[slug]",
+    "image_component": "Use next/image for all images — never <img> tag"
+  },
+
+  "external_links_rule": "All external links must have target='_blank' and rel='noopener noreferrer'. No exceptions.",
+
+  "placeholder_values": {
+    "_note": "These values exist in the config but are not yet real. Do NOT break the build because of them. Render them as-is or skip if empty.",
+    "social_urls":    "PLACEHOLDER_* values in talk-to-me.json — render as href='#' with a disabled style if PLACEHOLDER",
+    "pricing":        "PLACEHOLDER_PRICE in learnings.json and my-builts.json — render as 'Coming Soon' or leave blank",
+    "thumbnails":     "Missing thumbnail images — use a placeholder div with background color primary.100",
+    "hobbies":        "Empty array in about.json profile.hobbies.items — render nothing if array is empty"
+  },
+
+  "contact_form_api": {
+    "endpoint":       "POST /api/contact",
+    "env_variable":   "CONTACT_EMAIL — the email address where form submissions are sent",
+    "behavior":       "Show inline success/error message after submit. No page redirect. Client-side validation before POST.",
+    "email_library":  "Use Resend (npm install resend) — simpler than Nodemailer for Vercel serverless"
+  },
+
+  "payment_flow": {
+    "_note": "Buttons with action: 'payment_flow' are placeholders. For v1, render as a regular button that links to href='#' with a TODO comment. Do not implement Razorpay/Stripe in v1."
+  },
+
+  "what_was_already_decided": {
+    "no_dark_mode":          "Dark mode is out of scope for v1. Do not add dark: variants.",
+    "no_photography":        "No real photos of Pranav. Use placeholder avatar or illustration.",
+    "no_cms":                "No CMS integration. All content from JSON and MD files.",
+    "no_pages_router":       "App Router only. If you instinctively reach for getStaticProps, stop and use generateStaticParams instead.",
+    "no_default_tailwind_colors": "Do not use Tailwind's built-in color names (blue-600, gray-400). Always use project tokens.",
+    "no_framer_motion":      "No Framer Motion unless explicitly added to package.json and instructed.",
+    "no_other_icon_libs":    "Heroicons only. No lucide-react, no react-icons, no font-awesome."
+  },
+
+  "current_build_status": {
+    "_last_updated": "2026-05-27",
+    "config_complete":   true,
+    "nextjs_project":    false,
+    "components_built":  false,
+    "pages_built":       false,
+    "note": "The /config folder is the complete specification. No Next.js project has been scaffolded yet. The Python generator script will create the project scaffold. Components and pages will be built by the developer agent (Gemini) phase by phase."
+  },
+
+  "phase_sequence": {
+    "_note": "Build in this order. Do not skip ahead. Each phase gate must pass before the next begins.",
+    "phase_1": "Project scaffold — package.json, next.config.ts, tailwind.config.ts, tsconfig.json, app/layout.tsx shell",
+    "phase_2": "UI primitives — Button, Card, Badge, SectionHeader, Divider",
+    "phase_3": "Navbar + Footer from components.json",
+    "phase_4": "Home page — all 4 sections",
+    "phase_5": "About page — ProfileBlock + Timeline",
+    "phase_6": "Resources page + /resources/[slug] MD renderer",
+    "phase_7": "Learnings page + /learnings/[slug] CourseDetail",
+    "phase_8": "My Builts page + /my-builts/[slug] ToolDetail",
+    "phase_9": "Talk to Me page + /api/contact route",
+    "phase_10": "Final review — SEO, accessibility, performance, placeholder cleanup"
+  }
+}

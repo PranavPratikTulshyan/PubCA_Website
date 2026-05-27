@@ -1,0 +1,138 @@
+{
+  "_page_meta": {
+    "route":              "/talk-to-me",
+    "nextjs_file":        "app/talk-to-me/page.tsx",
+    "title":              "Talk to Me — Pranav PT",
+    "description":        "Find Pranav PT on YouTube, LinkedIn, Instagram, and Discord. Or drop a message directly.",
+    "og_image":           "/og/talk-to-me.png",
+    "rendering_strategy": "SSG"
+  },
+
+  "sections": [
+
+    {
+      "id":        "hero",
+      "component": "PageHero",
+
+      "badge":       "Talk to Me",
+      "headline":    "I'm genuinely easy to reach.",
+      "subheadline": "Whether you have a question about a course, a tool, or just want to say hi — find me wherever you're most comfortable."
+    },
+
+    {
+      "id":        "social_links",
+      "component": "SocialLinksBlock",
+      "_dev_note": "Grid of social platform cards. 2 columns on desktop, 1 on mobile. Each card: platform icon, platform name, handle or short description, and an external link button. All links open in new tab.",
+
+      "platforms": [
+        {
+          "platform":    "YouTube",
+          "icon":        "youtube",
+          "handle":      "@PranavPT",
+          "description": "110+ videos on Python, Automation, and AI — explained for Finance professionals.",
+          "cta_text":    "Watch on YouTube",
+          "href":        "PLACEHOLDER_YOUTUBE_URL",
+          "external":    true,
+          "_note":       "Replace PLACEHOLDER_YOUTUBE_URL with actual channel URL"
+        },
+        {
+          "platform":    "LinkedIn",
+          "icon":        "linkedin",
+          "handle":      "Pranav PT",
+          "description": "Professional updates, articles, and thoughts on Finance Technology.",
+          "cta_text":    "Connect on LinkedIn",
+          "href":        "https://www.linkedin.com/in/capranavptulshyan/",
+          "external":    true,
+          "_note":       "Replace PLACEHOLDER_LINKEDIN_URL with actual profile URL"
+        },
+        {
+          "platform":    "Instagram",
+          "icon":        "instagram",
+          "handle":      "@pranavpt",
+          "description": "Behind the scenes, short tech explanations, and community moments.",
+          "cta_text":    "Follow on Instagram",
+          "href":        "PLACEHOLDER_INSTAGRAM_URL",
+          "external":    true,
+          "_note":       "Replace PLACEHOLDER_INSTAGRAM_URL with actual profile URL"
+        },
+        {
+          "platform":    "Discord",
+          "icon":        "discord",
+          "handle":      "Unconventional CAs Community",
+          "description": "The community of Finance professionals building parallel careers in technology. Come introduce yourself.",
+          "cta_text":    "Join the Discord",
+          "href":        "PLACEHOLDER_DISCORD_INVITE_URL",
+          "external":    true,
+          "_note":       "Replace PLACEHOLDER_DISCORD_INVITE_URL with actual Discord invite link",
+          "highlight":   true,
+          "highlight_label": "Most Active"
+        }
+      ]
+    },
+
+    {
+      "id":        "contact_form",
+      "component": "ContactForm",
+      "_dev_note": "Simple form. On submit: POST to /api/contact which sends an email to Pranav's inbox (configure email in .env as CONTACT_EMAIL). Show a success message inline after submission — no page redirect. Basic client-side validation before submit.",
+
+      "title":    "Send a message",
+      "subtitle": "Course questions, tool queries, collaboration ideas, or just a hello — all welcome.",
+
+      "api_endpoint": "/api/contact",
+
+      "fields": [
+        {
+          "id":          "name",
+          "type":        "text",
+          "label":       "Your Name",
+          "placeholder": "What should I call you?",
+          "required":    true
+        },
+        {
+          "id":          "email",
+          "type":        "email",
+          "label":       "Your Email",
+          "placeholder": "Where can I reply?",
+          "required":    true
+        },
+        {
+          "id":          "subject",
+          "type":        "select",
+          "label":       "What's this about?",
+          "required":    true,
+          "options": [
+            { "value": "course_query",     "label": "Course / Batch Query" },
+            { "value": "tool_query",       "label": "Tool / My Builts Query" },
+            { "value": "collaboration",    "label": "Collaboration or Training" },
+            { "value": "feedback",         "label": "Feedback" },
+            { "value": "other",            "label": "Something else" }
+          ]
+        },
+        {
+          "id":          "message",
+          "type":        "textarea",
+          "label":       "Your Message",
+          "placeholder": "What would you like to talk about?",
+          "required":    true,
+          "rows":        5
+        }
+      ],
+
+      "submit_button": {
+        "text":    "Send Message",
+        "variant": "primary"
+      },
+
+      "success_message": {
+        "title":   "Message sent!",
+        "body":    "I'll get back to you as soon as I can — usually within 24 hours."
+      },
+
+      "error_message": {
+        "title":   "Something went wrong.",
+        "body":    "Please try again or reach out directly on any of the platforms above."
+      }
+    }
+
+  ]
+}

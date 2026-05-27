@@ -1,176 +1,129 @@
 {
-  "page": {
-    "route":       "/",
-    "slug":        "home",
-    "title":       "Pranav PT — Bringing Technology Closer to Humans",
-    "description": "Understand AI, App Development, Automation & Technology in the simplest way possible — through real-world analogies and human-first explanations."
+  "_page_meta": {
+    "route":               "/",
+    "nextjs_file":         "app/page.tsx",
+    "title":               "Pranav PT — Bringing Technology Closer to Humans",
+    "description":         "A Finance professional who taught himself Python, built 20+ tools, and grew a community of 6,000+ learners. This is his space to share everything.",
+    "og_image":            "/og/home.png",
+    "rendering_strategy":  "SSG"
   },
 
   "sections": [
 
     {
-      "id":      "hero",
-      "type":    "hero",
-      "enabled": true,
+      "id":        "hero",
+      "component": "HeroFullscreen",
+      "_dev_note": "Full viewport height (100vh). Left-aligned on desktop, centered on mobile. Large headline uses heading font (Manrope extrabold). Background: design-tokens.json gradients.hero.",
 
       "badge":       "Technology Made Human",
+
       "headline": {
-        "line_1": "Technology was never difficult.",
-        "line_2": "It was just badly explained."
+        "line_1":          "Technology was never complicated.",
+        "line_2":          "It was just never explained right."
       },
-      "subheadline": "Understand AI, Apps & Automation in the simplest way possible — through real-world analogies and human-first explanations.",
 
-      "cta_primary":   { "text": "Explore Technology", "href": "/explore" },
-      "cta_secondary": { "text": "Start Learning",     "href": "/resources" },
+      "subheadline": "I'm a Finance professional who taught himself Python, built tools, and proved that coders are not a different breed. This is my space to explore technology — together.",
 
-      "background": "gradient_hero",
-      "alignment":  "left",
+      "cta_primary": {
+        "text":    "Read My Story",
+        "href":    "/about",
+        "variant": "primary"
+      },
+      "cta_secondary": {
+        "text":    "Start Learning",
+        "href":    "/resources",
+        "variant": "secondary"
+      },
+
       "visual": {
         "type":        "illustration",
-        "description": "Layered modular technology diagram — think exploded car engine but for software layers"
+        "alt":         "Simplified layered technology diagram — like an exploded view of how systems are built",
+        "description": "Modular building blocks stacked — representing layers of technology (frontend, backend, data, AI). Clean, light, approachable. No dark cyberpunk, no robots."
       }
     },
 
     {
-      "id":       "topics",
-      "type":     "card_grid",
-      "enabled":  true,
+      "id":        "about_teaser",
+      "component": "AboutTeaser",
+      "_dev_note": "Two-column on desktop (text left, stats right), stacked on mobile. Stats use large Manrope numbers. The 'Read full story' link should feel like a quiet invitation, not a CTA button.",
 
-      "title":    "Explore How Technology Works",
-      "subtitle": "Understand the engine behind modern technology.",
-      "columns":  { "desktop": 4, "tablet": 2, "mobile": 1 },
+      "eyebrow":   "Who is Pranav PT?",
+      "title":     "A non-coder who taught himself to build.",
+      "body":      "I started as a Chartered Accountant who thought Excel was powerful enough. Then I discovered VBA, then Python, then Git — and realized the entire world of technology was learnable. I've been teaching that realization ever since.",
 
-      "cards": [
-        {
-          "title":       "AI",
-          "description": "Understand what actually happens behind AI tools.",
-          "icon":        "cpu-chip",
-          "href":        "/ai"
-        },
-        {
-          "title":       "Apps",
-          "description": "Learn how apps are structured and built internally.",
-          "icon":        "device-phone-mobile",
-          "href":        "/apps"
-        },
-        {
-          "title":       "Automation",
-          "description": "See how systems automate repetitive work.",
-          "icon":        "arrow-path",
-          "href":        "/automation"
-        },
-        {
-          "title":       "Servers",
-          "description": "Explore where your applications actually run.",
-          "icon":        "server-stack",
-          "href":        "/explore"
-        }
+      "link": {
+        "text": "Read my full story →",
+        "href": "/about"
+      },
+
+      "stats": [
+        { "value": "110+",   "label": "YouTube Videos",      "icon": "play-circle" },
+        { "value": "20+",    "label": "Apps Built",           "icon": "cube" },
+        { "value": "6,000+", "label": "Community Members",    "icon": "users" },
+        { "value": "4 yrs",  "label": "Teaching Automation",  "icon": "academic-cap" }
       ]
     },
 
     {
-      "id":      "car_analogy",
-      "type":    "split_content",
-      "enabled": true,
+      "id":        "journey_teaser",
+      "component": "JourneyTeaser",
+      "_dev_note": "Horizontal scroll of 4 milestone cards on mobile. Fixed row of 4 on desktop. Each card has: date tag, short title, and an emotion/tag label. Last item is 'Today'. After the cards, a quiet link to /about#journey.",
 
-      "badge":    "The Core Idea",
-      "title":    "Technology is like a car.",
-      "subtitle": "You don't need to be a mechanic to drive. But if you understand the engine, gears, and fuel system — you can fix problems, customize, and eventually build your own.",
-      "body":     "Most people only learn to drive. Pranav PT teaches you the engine. AI, apps, automation, and servers — all explained through real analogies so you actually understand what's happening, not just how to click buttons.",
+      "eyebrow":  "The Journey",
+      "title":    "From Excel to Python. From user to builder.",
+      "subtitle": "It didn't happen overnight. Here are the moments that changed everything.",
 
-      "cta": { "text": "See How It Works", "href": "/explore" },
+      "milestones": [
+        {
+          "date":        "Jan 2019",
+          "title":       "Became a CA. Thought I knew Excel.",
+          "tag":         "Starting Point",
+          "tag_color":   "neutral"
+        },
+        {
+          "date":        "Aug 2020",
+          "title":       "Hit a wall in VBA. Discovered Python.",
+          "tag":         "Turning Point",
+          "tag_color":   "primary"
+        },
+        {
+          "date":        "Feb 2021",
+          "title":       "Made my first GitHub commit. Coders are not a different breed.",
+          "tag":         "The Shift",
+          "tag_color":   "primary"
+        },
+        {
+          "date":        "Today",
+          "title":       "110+ videos. 20+ apps. 6,000+ learners. Still learning.",
+          "tag":         "Ongoing",
+          "tag_color":   "secondary"
+        }
+      ],
 
-      "layout":    "text_left_visual_right",
-      "visual": {
-        "type":        "illustration",
-        "description": "Split diagram: car parts on left mapped to tech concepts on right (engine → server, gears → API, dashboard → frontend)"
+      "link": {
+        "text": "See the full journey →",
+        "href": "/about#journey"
       }
     },
 
     {
-      "id":      "why_pranav_pt",
-      "type":    "feature_list",
-      "enabled": true,
+      "id":        "explore_space",
+      "component": "CTABanner",
+      "_dev_note": "Gentle invitation — NOT a hard sell. Two soft CTAs side by side. Background: light gradient, not heavy.",
 
-      "title":   "Why Pranav PT?",
-      "subtitle":"There are thousands of tech tutorials. This is different.",
+      "title":    "This is a space to learn. Not a place to be sold to.",
+      "subtitle": "Explore resources, join a batch, or check out the tools I've built. Come as you are.",
 
-      "features": [
-        {
-          "icon":        "light-bulb",
-          "title":       "Concepts, not commands",
-          "description": "You learn WHY something works, not just which button to click."
-        },
-        {
-          "icon":        "user-group",
-          "title":       "Built for age 11 to 80",
-          "description": "Designed so anyone — student, professional, or curious adult — can follow along."
-        },
-        {
-          "icon":        "puzzle-piece",
-          "title":       "Real-world analogies",
-          "description": "Every concept is mapped to something you already understand in real life."
-        },
-        {
-          "icon":        "academic-cap",
-          "title":       "From curious to capable",
-          "description": "You go from understanding technology to being able to customize and build it."
-        }
-      ]
-    },
-
-    {
-      "id":      "topics_depth",
-      "type":    "horizontal_scroll_cards",
-      "enabled": true,
-
-      "title":   "Pick Where You Want to Start",
-      "subtitle":"Every path starts simple. Every path goes deep.",
-
-      "cards": [
-        {
-          "label":       "Beginner",
-          "title":       "What even is AI?",
-          "topic":       "AI",
-          "read_time":   "5 min",
-          "href":        "/ai"
-        },
-        {
-          "label":       "Beginner",
-          "title":       "How does an app work internally?",
-          "topic":       "Apps",
-          "read_time":   "6 min",
-          "href":        "/apps"
-        },
-        {
-          "label":       "Intermediate",
-          "title":       "What is automation and why does it matter?",
-          "topic":       "Automation",
-          "read_time":   "7 min",
-          "href":        "/automation"
-        },
-        {
-          "label":       "Intermediate",
-          "title":       "Where do websites actually live?",
-          "topic":       "Servers",
-          "read_time":   "5 min",
-          "href":        "/explore"
-        }
-      ]
-    },
-
-    {
-      "id":      "cta_banner",
-      "type":    "cta_banner",
-      "enabled": true,
-
-      "title":    "Ready to understand technology — not just use it?",
-      "subtitle": "Start with one concept. One analogy. One idea that makes everything click.",
-
-      "cta_primary":   { "text": "Start Exploring", "href": "/explore" },
-      "cta_secondary": { "text": "Browse Resources", "href": "/resources" },
-
-      "background": "gradient_hero"
+      "cta_primary": {
+        "text":    "Browse Resources",
+        "href":    "/resources",
+        "variant": "primary"
+      },
+      "cta_secondary": {
+        "text":    "See Learnings",
+        "href":    "/learnings",
+        "variant": "secondary"
+      }
     }
 
   ]

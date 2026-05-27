@@ -69,12 +69,22 @@
   ],
 
   "file_structure": {
-    "config_tokens":    "/config/design-tokens.json",
-    "config_layout":    "/config/layout.json",
-    "config_components":"/config/components.json",
-    "config_animation": "/config/animation.json",
-    "config_meta":      "/config/meta.json",
-    "config_rules":     "/config/rules.json",
-    "pages_dir":        "/config/pages/"
+    "_note":             "All files a Next.js developer needs are in /config. Read _dev_guide.json first.",
+    "dev_guide":         "/config/_dev_guide.json",
+    "config_meta":       "/config/meta.json",
+    "config_tokens":     "/config/design-tokens.json",
+    "config_layout":     "/config/layout.json",
+    "config_components": "/config/components.json",
+    "config_animation":  "/config/animation.json",
+    "config_rules":      "/config/rules.json",
+    "pages": {
+      "home":       "/config/pages/home.json",
+      "about":      "/config/pages/about.json",
+      "resources":  "/config/pages/resources.json",
+      "learnings":  "/config/pages/learnings.json",
+      "my_builts":  "/config/pages/my-builts.json",
+      "talk_to_me": "/config/pages/talk-to-me.json"
+    },
+    "markdown_content": "/content/resources/[slug].md"
   }
 }

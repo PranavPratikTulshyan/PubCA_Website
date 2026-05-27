@@ -15,13 +15,12 @@
     },
 
     "menu_items": [
-      { "label": "Home",               "href": "/" },
-      { "label": "Explore Technology", "href": "/explore" },
-      { "label": "AI Simplified",      "href": "/ai" },
-      { "label": "Build Apps",         "href": "/apps" },
-      { "label": "Automation",         "href": "/automation" },
-      { "label": "Resources",          "href": "/resources" },
-      { "label": "About",              "href": "/about" }
+      { "label": "Home",        "href": "/" },
+      { "label": "About",       "href": "/about" },
+      { "label": "Resources",   "href": "/resources" },
+      { "label": "Learnings",   "href": "/learnings" },
+      { "label": "My Builts",   "href": "/my-builts" },
+      { "label": "Talk to Me",  "href": "/talk-to-me" }
     ],
 
     "menu_item_style": {
@@ -150,5 +149,60 @@
     "color":  "#DCE3EA",
     "height": "1px",
     "margin": "0"
+  },
+
+  "form_inputs": {
+    "_dev_note": "Apply these styles to all input, textarea, and select elements in ContactForm.tsx",
+    "base": {
+      "background":        "#FFFFFF",
+      "border":            "1px solid #DCE3EA",
+      "border_radius":     "10px",
+      "padding":           "12px 16px",
+      "font_size":         "base",
+      "font_family":       "body",
+      "color":             "#1A1A1A",
+      "placeholder_color": "#6B7280",
+      "transition":        "normal"
+    },
+    "focus": {
+      "border_color":  "#2F7EBF",
+      "outline":       "2px solid #2F7EBF",
+      "outline_offset":"2px"
+    },
+    "error": {
+      "border_color":  "#DC2626",
+      "text_color":    "#DC2626",
+      "font_size":     "sm"
+    },
+    "label": {
+      "font_size":   "sm",
+      "font_weight": 500,
+      "color":       "#1A1A1A",
+      "margin_bottom":"6px"
+    },
+    "textarea": {
+      "min_height": "120px",
+      "resize":     "vertical"
+    },
+    "select": {
+      "appearance":     "none",
+      "cursor":         "pointer",
+      "padding_right":  "40px"
+    }
+  },
+
+  "icons": {
+    "library":    "Heroicons v2",
+    "import_path_outline": "@heroicons/react/24/outline",
+    "import_path_solid":   "@heroicons/react/24/solid",
+    "sizes": {
+      "xs":  "16px",
+      "sm":  "20px",
+      "md":  "24px",
+      "lg":  "32px",
+      "xl":  "40px"
+    },
+    "default_size": "md",
+    "_note": "Use outline variant by default. Use solid only for active/selected states."
   }
 }

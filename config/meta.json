@@ -85,10 +85,29 @@
     }
   },
 
+  "site_pages": {
+    "_note": "These are the only pages in v1. Each maps to a file in config/pages/ and an app router file.",
+    "pages": [
+      { "route": "/",           "config": "config/pages/home.json",        "nextjs_file": "app/page.tsx" },
+      { "route": "/about",      "config": "config/pages/about.json",       "nextjs_file": "app/about/page.tsx" },
+      { "route": "/resources",  "config": "config/pages/resources.json",   "nextjs_file": "app/resources/page.tsx" },
+      { "route": "/learnings",  "config": "config/pages/learnings.json",   "nextjs_file": "app/learnings/page.tsx" },
+      { "route": "/my-builts",  "config": "config/pages/my-builts.json",   "nextjs_file": "app/my-builts/page.tsx" },
+      { "route": "/talk-to-me", "config": "config/pages/talk-to-me.json",  "nextjs_file": "app/talk-to-me/page.tsx" }
+    ],
+    "dynamic_routes": [
+      { "route": "/resources/[slug]",  "content_source": "content/resources/[slug].md",   "nextjs_file": "app/resources/[slug]/page.tsx" },
+      { "route": "/learnings/[slug]",  "content_source": "config/pages/learnings.json",   "nextjs_file": "app/learnings/[slug]/page.tsx" },
+      { "route": "/my-builts/[slug]",  "content_source": "config/pages/my-builts.json",   "nextjs_file": "app/my-builts/[slug]/page.tsx" }
+    ]
+  },
+
   "v1_scope": {
-    "dark_mode": false,
-    "photography": false,
-    "media_assets": "illustration_and_icon_only",
-    "cms_integration": false
+    "dark_mode":       false,
+    "photography":     false,
+    "media_assets":    "illustration_and_icon_only",
+    "cms_integration": false,
+    "payment_flow":    "placeholder — Razorpay / Stripe integration in v2",
+    "pages_removed":   ["ai", "apps", "automation", "explore"]
   }
 }

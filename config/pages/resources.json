@@ -1,118 +1,157 @@
 {
-  "page": {
-    "route":       "/resources",
-    "slug":        "resources",
-    "title":       "Resources — Pranav PT",
-    "description": "Curated learning paths, tools, and references for understanding AI, App Development, Automation, and Technology."
+  "_page_meta": {
+    "route":              "/resources",
+    "nextjs_file":        "app/resources/page.tsx",
+    "title":              "Resources — Pranav PT",
+    "description":        "Curated reads on Python, AI, Automation, and Finance Technology. Articles and guides written to make complex concepts simple.",
+    "og_image":           "/og/resources.png",
+    "rendering_strategy": "SSG"
+  },
+
+  "_content_model": {
+    "how_it_works":   "Each resource item has a 'slug'. The full article content lives in content/resources/[slug].md. The list page reads from this JSON. The detail page at /resources/[slug] reads and renders the MD file.",
+    "adding_content": "To add a new resource: (1) Add an entry to the categories[n].items array below. (2) Create the file content/resources/[slug].md with the full article content.",
+    "md_frontmatter": "Each .md file MUST begin with this exact frontmatter block or the detail page will throw a runtime error:",
+    "md_frontmatter_template": "---\ntitle: \"Article Title\"\ndescription: \"One sentence for SEO meta description\"\ncategory: \"Python\"\nread_time: \"6 min\"\npublished_date: \"2026-05-27\"\n---"
+  },
+
+  "detail_page_layout": {
+    "_nextjs_file":   "app/resources/[slug]/page.tsx",
+    "_dev_note":      "The detail page renders the .md file content. Use @tailwindcss/typography (prose classes) for article body styling. Back link at top returns to /resources.",
+    "back_link":      { "text": "← All Resources", "href": "/resources" },
+    "layout":         "single_column_centered",
+    "max_width":      "720px",
+    "body_padding":   { "desktop": "96px 32px", "mobile": "48px 16px" },
+    "prose_class":    "prose prose-lg font-body text-neutral-text-primary max-w-none",
+    "heading_class":  "font-heading",
+    "metadata_row":   ["category_badge", "read_time", "published_date"]
   },
 
   "sections": [
 
     {
-      "id":      "hero",
-      "type":    "page_hero",
-      "enabled": true,
+      "id":        "hero",
+      "component": "PageHero",
 
       "badge":       "Resources",
-      "headline":    "Everything you need to go from curious to capable.",
-      "subheadline": "Curated paths, tools, and references. No noise — just what actually matters.",
-      "background":  "gradient_hero"
+      "headline":    "Things worth reading.",
+      "subheadline": "Concepts explained simply. Tools explained honestly. No fluff, no buzzwords."
     },
 
     {
-      "id":      "learning_paths",
-      "type":    "card_grid",
-      "enabled": true,
+      "id":        "resources_grid",
+      "component": "ResourcesGrid",
+      "_dev_note": "Render category filter tabs above the grid. On mobile: horizontal scroll tabs. Clicking a tab filters the grid. Default: show All. Each card: title, category tag, read_time, description, link to /resources/[slug].",
 
-      "title":    "Learning Paths",
-      "subtitle": "Start anywhere. Every path is self-contained.",
-      "columns":  { "desktop": 2, "tablet": 2, "mobile": 1 },
+      "filter_tabs": ["All", "Python", "AI", "Automation", "Finance Tech", "Tools"],
 
-      "cards": [
+      "categories": [
         {
-          "title":       "Understand AI from Scratch",
-          "description": "What is AI, how it learns, and how to think about it. No math required.",
-          "icon":        "cpu-chip",
-          "href":        "/ai",
-          "tag":         "Beginner"
+          "name": "Python",
+          "items": [
+            {
+              "slug":        "python-for-non-coders",
+              "title":       "Python for Non-Coders: Where to Actually Start",
+              "description": "Not another 'install Python' tutorial. This is about the mindset shift that makes Python finally click.",
+              "category":    "Python",
+              "read_time":   "6 min",
+              "published":   true
+            },
+            {
+              "slug":        "why-python-beats-vba",
+              "title":       "Why Python Beat VBA for Finance Automation",
+              "description": "I used VBA for a year before switching. Here's exactly what changed and why it was worth it.",
+              "category":    "Python",
+              "read_time":   "5 min",
+              "published":   true
+            }
+          ]
         },
         {
-          "title":       "How Apps are Built",
-          "description": "Frontend, backend, APIs, databases — the complete mental model of app architecture.",
-          "icon":        "device-phone-mobile",
-          "href":        "/apps",
-          "tag":         "Beginner"
+          "name": "AI",
+          "items": [
+            {
+              "slug":        "ai-is-not-magic",
+              "title":       "AI Is Not Magic. Here's What It Actually Is.",
+              "description": "Strip away the hype. Understand what a language model actually does — explained through an analogy anyone can follow.",
+              "category":    "AI",
+              "read_time":   "7 min",
+              "published":   true
+            },
+            {
+              "slug":        "ai-in-finance-2021",
+              "title":       "AI in 2021 Was the Internet in 1995",
+              "description": "The piece I kept saying out loud before I finally put it on YouTube. What I saw then — and what happened next.",
+              "category":    "AI",
+              "read_time":   "5 min",
+              "published":   true
+            }
+          ]
         },
         {
-          "title":       "Automation Fundamentals",
-          "description": "Triggers, actions, schedules — how to make systems work without you.",
-          "icon":        "arrow-path",
-          "href":        "/automation",
-          "tag":         "Intermediate"
+          "name": "Automation",
+          "items": [
+            {
+              "slug":        "what-is-automation-really",
+              "title":       "What Is Automation — Really?",
+              "description": "Vending machines. Triggers. Actions. If this, do that. Automation in plain language with zero jargon.",
+              "category":    "Automation",
+              "read_time":   "5 min",
+              "published":   true
+            },
+            {
+              "slug":        "automate-excel-with-python",
+              "title":       "How I Automated My Entire Excel Reporting in Python",
+              "description": "A real Finance use case. Daily report that used to take 45 minutes — now runs in 90 seconds.",
+              "category":    "Automation",
+              "read_time":   "8 min",
+              "published":   true
+            }
+          ]
         },
         {
-          "title":       "Explore All Technology Concepts",
-          "description": "A broad starting point covering servers, internet, APIs, and more.",
-          "icon":        "globe-alt",
-          "href":        "/explore",
-          "tag":         "All Levels"
+          "name": "Finance Tech",
+          "items": [
+            {
+              "slug":        "non-coder-to-builder",
+              "title":       "How a Non-Coder Becomes a Builder",
+              "description": "The actual path. No shortcuts, no overnight success. Just the honest steps from Excel to Python to deploying real tools.",
+              "category":    "Finance Tech",
+              "read_time":   "9 min",
+              "published":   true
+            },
+            {
+              "slug":        "ca-should-learn-python",
+              "title":       "Why Every Finance Professional Should Learn Python",
+              "description": "Not to become a developer. To stop being dependent on one.",
+              "category":    "Finance Tech",
+              "read_time":   "6 min",
+              "published":   true
+            }
+          ]
+        },
+        {
+          "name": "Tools",
+          "items": [
+            {
+              "slug":        "google-colab-for-beginners",
+              "title":       "Google Colab: The Easiest Way to Start Python Without Installing Anything",
+              "description": "No setup. Open browser. Start coding. Here's how to actually use Colab productively.",
+              "category":    "Tools",
+              "read_time":   "4 min",
+              "published":   true
+            },
+            {
+              "slug":        "streamlit-build-apps",
+              "title":       "Build a Web App with Streamlit in 30 Minutes",
+              "description": "No HTML, no JavaScript. Pure Python. Here's how I build and share tools with non-technical teams.",
+              "category":    "Tools",
+              "read_time":   "7 min",
+              "published":   true
+            }
+          ]
         }
       ]
-    },
-
-    {
-      "id":      "tools_reference",
-      "type":    "grouped_list",
-      "enabled": true,
-
-      "title":   "Tools Worth Knowing",
-
-      "groups": [
-        {
-          "category": "AI Tools",
-          "items": [
-            { "name": "ChatGPT",   "use": "General AI assistant — ask anything" },
-            { "name": "Claude",    "use": "Long-form reasoning and analysis" },
-            { "name": "Perplexity","use": "AI-powered search with cited sources" }
-          ]
-        },
-        {
-          "category": "App Development",
-          "items": [
-            { "name": "Next.js",  "use": "React framework for fast, modern web apps" },
-            { "name": "Vercel",   "use": "Deploy apps instantly with zero configuration" },
-            { "name": "Supabase", "use": "Open-source backend — database, auth, storage" }
-          ]
-        },
-        {
-          "category": "Automation",
-          "items": [
-            { "name": "Zapier", "use": "Connect apps without code" },
-            { "name": "Make",   "use": "Visual automation for complex workflows" },
-            { "name": "n8n",    "use": "Self-hosted, open-source automation platform" }
-          ]
-        },
-        {
-          "category": "Learning",
-          "items": [
-            { "name": "MDN Web Docs",   "use": "The reference for HTML, CSS, JavaScript" },
-            { "name": "The Odin Project","use": "Free, structured web development curriculum" },
-            { "name": "fast.ai",        "use": "Practical deep learning for coders" }
-          ]
-        }
-      ]
-    },
-
-    {
-      "id":      "newsletter",
-      "type":    "newsletter_signup",
-      "enabled": true,
-
-      "title":       "Get concepts explained weekly.",
-      "subtitle":    "One technology concept. One real-world analogy. Every week.",
-      "placeholder": "Enter your email",
-      "cta":         "Subscribe — It's Free",
-      "note":        "No spam. Unsubscribe anytime."
     }
 
   ]

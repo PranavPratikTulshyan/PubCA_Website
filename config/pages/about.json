@@ -1,101 +1,223 @@
 {
-  "page": {
-    "route":       "/about",
-    "slug":        "about",
-    "title":       "About — Pranav PT",
-    "description": "Meet Pranav PT — the person on a mission to make technology understandable for every human, from age 11 to 80."
+  "_page_meta": {
+    "route":              "/about",
+    "nextjs_file":        "app/about/page.tsx",
+    "title":              "About Pranav PT — The Non-Coder Who Taught Himself to Build",
+    "description":        "From a Chartered Accountant to a Finance Technologist — Pranav's journey of self-teaching Python, building 20+ tools, and proving that coding is a learnable skill.",
+    "og_image":           "/og/about.png",
+    "rendering_strategy": "SSG"
   },
 
   "sections": [
 
     {
-      "id":      "hero",
-      "type":    "page_hero",
-      "enabled": true,
+      "id":        "hero",
+      "component": "PageHero",
+      "_dev_note": "Standard inner page hero. Shorter than HeroFullscreen — roughly 50vh. Badge + headline + subheadline. Light gradient background.",
 
-      "badge":       "The Person Behind the Platform",
-      "headline":    "Hi, I'm Pranav.",
-      "subheadline": "I believe technology is not complicated. It's just been explained badly. I'm here to change that.",
-      "background":  "gradient_hero"
+      "badge":       "The Person Behind This Space",
+      "headline":    "The non-coder who taught himself to build.",
+      "subheadline": "I didn't study Computer Science. I studied Chartered Accountancy. Everything I know about technology, I taught myself — one frustration at a time."
     },
 
     {
-      "id":      "origin_story",
-      "type":    "split_content",
-      "enabled": true,
+      "id":        "profile",
+      "component": "ProfileBlock",
+      "_dev_note": "Two-column on desktop. Left col: name, designation, tags, hobbies. Right col: 4 stats. Below both cols: expertise list in a 2-col grid. NOTE: hobbies array is marked _content_todo — Pranav to fill in.",
 
-      "title": "Why I started this",
-      "body":  "Most people interact with technology every day but have no idea how any of it works. They use apps, AI tools, and automation — but feel dependent, confused, and sometimes even intimidated. I started Pranav PT because I realized the gap isn't intelligence. It's explanation. When you explain technology through real-world analogies — the way you'd explain a car engine to someone who drives one — everything becomes clear.",
+      "name":        "Pranav PT",
+      "designation": "Finance Technologist · Educator · Builder",
 
-      "layout": "text_right_visual_left",
-      "visual": {
-        "type":        "illustration",
-        "description": "A person looking at a transparent, open technology diagram — curious, not afraid"
-      }
+      "identity_tags": [
+        "Self-Taught Coder",
+        "Finance Automation",
+        "Python + AI",
+        "YouTube Educator",
+        "Community Builder"
+      ],
+
+      "bio_paragraphs": [
+        "I became a CA in 2019. I thought I was good at Excel. I was wrong — and that humbling was the best thing that ever happened to me.",
+        "Over the next two years, I taught myself VBA, then Python, then Git, then AI — entirely on my own, while working full-time in government finance. Not because it was required. Because I was curious.",
+        "In 2021, I made my first GitHub commit and posted my first YouTube video. I wanted to tell the Finance world that building technology is not a skill reserved for Computer Science graduates. It's a skill anyone can learn.",
+        "Today, I teach Finance professionals and students how to automate their work, build their own tools, and understand technology from the inside out."
+      ],
+
+      "hobbies": {
+        "_content_todo": "Pranav to fill in his hobbies here. Examples: reading, cricket, chess, music, etc.",
+        "section_label": "Outside of tech, I",
+        "items": []
+      },
+
+      "stats": [
+        { "value": "110+",   "label": "YouTube Videos",     "icon": "play-circle" },
+        { "value": "20+",    "label": "Apps & Tools Built",  "icon": "cube" },
+        { "value": "6,000+", "label": "Community Members",   "icon": "users" },
+        { "value": "4 yrs",  "label": "Teaching Automation", "icon": "academic-cap" }
+      ],
+
+      "expertise_areas": [
+        "Python for Finance & Automation",
+        "AI Integration in Office Workflows",
+        "Excel & Google Sheets Automation",
+        "PDF & Document Automation",
+        "Google Apps Script",
+        "Streamlit Web App Development",
+        "Finance Tech Transformation"
+      ]
     },
 
     {
-      "id":      "car_analogy_origin",
-      "type":    "callout_block",
-      "enabled": true,
+      "id":        "journey",
+      "component": "Timeline",
+      "_dev_note": "Vertical timeline. Anchor id must be 'journey' so home page JourneyTeaser can link to /about#journey. On desktop: date on left, content on right. On mobile: stacked vertically. Items with 'link' field should render as a subtle external link with an arrow icon (opens in new tab). Items with 'tag: Turning Point' get highlighted with primary color accent.",
 
-      "quote":  "Just like car enthusiasts understand engines, gears, and pistons — technology learners should understand code, frontend, servers, automation, and AI. Not to memorize. To think.",
-      "attribution": "— Pranav PT"
-    },
+      "anchor_id": "journey",
+      "eyebrow":   "The Journey",
+      "title":     "From CA to Finance Technologist.",
+      "subtitle":  "Six years. One realization: coders are not a different breed.",
 
-    {
-      "id":      "mission",
-      "type":    "feature_list",
-      "enabled": true,
-
-      "title":   "What I'm here to do",
-
-      "features": [
+      "events": [
         {
-          "icon":        "light-bulb",
-          "title":       "Simplify, not dumb down",
-          "description": "Technology is explained simply enough for an 11-year-old without being condescending to a 40-year-old professional."
+          "date":        "Jan 2019",
+          "title":       "Qualified CA — All India Rank 5",
+          "description": "Finished the CA journey. Entered the professional world full of confidence. Thought I was good at Excel.",
+          "tag":         "Starting Point",
+          "tag_color":   "neutral"
         },
         {
-          "icon":        "heart",
-          "title":       "Make people fall in love with learning",
-          "description": "The goal is not just to teach — it's to make you genuinely curious and excited about how things work."
+          "date":        "Apr 2019",
+          "title":       "Left EY with false confidence",
+          "description": "Walked out of EY thinking I knew everything about spreadsheets. I did not.",
+          "tag":         null,
+          "humour_note": "The 'lolzz' energy — self-aware, not bitter"
         },
         {
-          "icon":        "arrow-trending-up",
-          "title":       "From user to builder",
-          "description": "Every person who goes through this journey moves from passively using technology to actively customizing and building with it."
+          "date":        "Jun 2019",
+          "title":       "Joined IOCL — Financial Reporting",
+          "description": "Started working at Indian Oil Corporation in Bihar & Jharkhand Finance Operations. Giant company. Massive numbers. Massive amounts of repetitive work.",
+          "tag":         null
+        },
+        {
+          "date":        "Oct 2019",
+          "title":       "Attended trainings. Realized how little I knew.",
+          "description": "Sat through Excel training sessions and discovered capabilities of the tool I had been using daily but barely scratched the surface of. The humbling began.",
+          "tag":         "Reality Check",
+          "tag_color":   "neutral"
+        },
+        {
+          "date":        "Jan 2020",
+          "title":       "Decided to learn VBA Macro",
+          "description": "Too much repetitive work. There had to be a better way. Started learning VBA — the first step into automation.",
+          "tag":         "First Step",
+          "tag_color":   "primary"
+        },
+        {
+          "date":        "Aug 2020",
+          "title":       "Hit a wall in VBA. Found Python.",
+          "description": "VBA had limits. Someone mentioned Python. Downloaded it. Started learning. The world opened up.",
+          "tag":         "Turning Point",
+          "tag_color":   "primary"
+        },
+        {
+          "date":        "Dec 2020",
+          "title":       "Realized coders are not a different breed.",
+          "description": "Months of self-teaching made something click: this is just logic. Anyone can learn this. Coders are not born — they just started earlier.",
+          "tag":         "The Realization",
+          "tag_color":   "primary"
+        },
+        {
+          "date":        "21 Feb 2021",
+          "title":       "Made my life's first GitHub commit",
+          "description": "Built an Office Assistant — a tool to prevent uploading files to third-party websites, keeping sensitive data in-house. Felt like discovering the future of Finance.",
+          "tag":         "First Build",
+          "tag_color":   "primary",
+          "link": {
+            "text":     "See the GitHub repo",
+            "href":     "https://github.com/pranav7712/OFFICE_AUTOMATION/",
+            "external": true
+          }
+        },
+        {
+          "date":        "Mar 2021",
+          "title":       "Presented the idea at IOCL. Crickets.",
+          "description": "Presented the concept of an in-house Office Assistant to the company. The idea didn't get much attention. That was okay. The learning mattered more.",
+          "tag":         null
+        },
+        {
+          "date":        "Apr 2021",
+          "title":       "Posted my first YouTube video",
+          "description": "Decided to tell the Finance world: making apps is possible, and coding is a learnable skill — even if you're not a developer.",
+          "tag":         "First Video",
+          "tag_color":   "secondary",
+          "link": {
+            "text":     "Watch the first video",
+            "href":     "https://www.youtube.com/watch?v=G5lOblkmMAM",
+            "external": true
+          }
+        },
+        {
+          "date":        "May 2021",
+          "title":       "Posted my first 'AI for Finance' video",
+          "description": "One line. One submission: AI in 2021 is the same as the internet in 1995. Most people dismissed it. A few got it.",
+          "tag":         "Vision",
+          "tag_color":   "secondary",
+          "link": {
+            "text":     "Watch the video",
+            "href":     "https://www.youtube.com/watch?v=C1Dt4gVW_Mk",
+            "external": true
+          }
+        },
+        {
+          "date":        "2021 — 2025",
+          "title":       "Building. Teaching. Growing.",
+          "description": "What followed was four years of consistent work.",
+          "tag":         "Ongoing",
+          "tag_color":   "secondary",
+          "milestones_in_period": [
+            "110+ videos published on YouTube",
+            "20+ apps built for Finance — covering GST, document management, automation workflows",
+            "Numerous corporate training sessions on Finance Automation, Python & AI",
+            "Built the first DPDP Act Compliant Document Management System for a CA Firm",
+            "Working on a Client Portal for CA Students",
+            "Running Weekend + Weekday batches: Automation with Python + AI",
+            "Building a community of 'Unconventional CAs' who want to pursue technology as a parallel career"
+          ]
+        },
+        {
+          "date":        "Today",
+          "title":       "Still learning. Still building. Still teaching.",
+          "description": "6,000+ community members. The mission is the same: prove that technology is learnable — and worth learning.",
+          "tag":         "Present",
+          "tag_color":   "primary",
+          "link": {
+            "text":     "Join the Discord community",
+            "href":     "https://discord.gg/yG3ZWUysk",
+            "external": true,
+            "_note":    "Replace PLACEHOLDER_DISCORD_LINK with actual Discord invite URL"
+          }
         }
       ]
     },
 
     {
-      "id":      "topics_covered",
-      "type":    "tag_cloud",
-      "enabled": true,
+      "id":        "cta",
+      "component": "CTABanner",
+      "_dev_note": "Closing section. Soft and warm. Not pushing a product.",
 
-      "title":  "Topics I Cover",
-      "topics": [
-        "Artificial Intelligence",
-        "App Development",
-        "Automation",
-        "Servers & Hosting",
-        "APIs",
-        "Frontend Development",
-        "No-Code Tools",
-        "AI Workflows",
-        "Operating Systems",
-        "Version Control"
-      ]
-    },
+      "title":    "Let's explore the tech world together.",
+      "subtitle": "Start with the resources. Or jump into a batch. Or just browse what I've built.",
 
-    {
-      "id":      "cta_banner",
-      "type":    "cta_banner",
-      "enabled": true,
-
-      "title":    "Start exploring technology with me.",
-      "cta_primary": { "text": "Explore Technology", "href": "/explore" }
+      "cta_primary": {
+        "text":    "Browse Resources",
+        "href":    "/resources",
+        "variant": "primary"
+      },
+      "cta_secondary": {
+        "text":    "See Learnings",
+        "href":    "/learnings",
+        "variant": "secondary"
+      }
     }
 
   ]
