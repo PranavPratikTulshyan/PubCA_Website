@@ -1,4 +1,4 @@
-# Pranav PT — Website
+# Pranav PT — Website  (Public Repo)
 
 Personal brand website for Pranav PT (`pranavpt.com`). A learning space for Finance professionals who want to understand and build with technology.
 
