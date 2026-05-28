@@ -72,9 +72,8 @@
       "suitable_for": ["CA Firms", "Finance Teams", "Compliance-heavy businesses"],
 
       "pricing": {
-        "amount":   "PLACEHOLDER_PRICE",
-        "currency": "INR",
-        "_note":    "Replace PLACEHOLDER_PRICE before publishing"
+        "amount":   "999",
+        "currency": "INR"
       },
 
       "cta": {
